@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -15,13 +14,13 @@ public class Categoria {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private long id;
-	@NotBlank
+	
 	@Size(min = 2, max = 30)
 	private String nome;
-	@NotBlank
+	
 	@Size(min = 2, max = 100)
 	private String descricao;
-	@NotBlank
+
 	@Size(min = 2, max = 100)
 	private String setor;
 	
