@@ -37,9 +37,9 @@ public class CategoriaController {
 	}
 	
 	
-	@GetMapping("/{id}")
-	public ResponseEntity<Categoria> GetAllById(@PathVariable long id){
-		return repository.findById(id)
+	@GetMapping("/{codigo}")
+	public ResponseEntity<Categoria> GetAllById(@PathVariable long codigo){
+		return repository.findById(codigo)
 				.map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
@@ -54,10 +54,10 @@ public class CategoriaController {
 		
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/{codigo}")
 	
-	public void delete(@PathVariable long id) {
-		repository.deleteById(id);
+	public void delete(@PathVariable long codigo) {
+		repository.deleteById(codigo);
 	}
 	
 	

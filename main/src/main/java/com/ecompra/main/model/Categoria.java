@@ -1,11 +1,17 @@
 package com.ecompra.main.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_categoria")
@@ -13,7 +19,7 @@ public class Categoria {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long id;
+	private long codigo;
 	
 	@Size(min = 2, max = 30)
 	private String nome;
@@ -24,12 +30,17 @@ public class Categoria {
 	@Size(min = 2, max = 100)
 	private String setor;
 	
+	//Relacionamento entre tabelas
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("categoria")	
+	private List<Produto> produto;
 	
-	public long getId() {
-		return id;
+	
+	public long getCodigo() {
+		return codigo;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setCodigo(long codigo) {
+		this.codigo = codigo;
 	}
 	public String getNome() {
 		return nome;
@@ -50,4 +61,10 @@ public class Categoria {
 		this.setor = setor;
 	}
 	
+	public List<Produto> getProduto() {
+		return produto;
+	}
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
 }

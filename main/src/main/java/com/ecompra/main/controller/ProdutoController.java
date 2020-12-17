@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.ecompra.main.model.Produto;
 import com.ecompra.main.repository.ProdutoRepository;
+
 
 @RestController
 @RequestMapping("/produto")
@@ -31,10 +31,15 @@ public class ProdutoController {
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
-	@GetMapping("/{id}")
-	public ResponseEntity<Produto> GetById(@PathVariable long id){
-		return repository.findById(id)
+	@GetMapping("/{codigo}")
+	public ResponseEntity<Produto> GetById(@PathVariable long codigo){
+		return repository.findById(codigo)
 				.map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+	}
+	
+	@GetMapping("/buscaProduto/{nome}")
+	public ResponseEntity<List<Produto>> findAllByNome (@PathVariable String nome){
+		return ResponseEntity.ok(repository.findAllByNome(nome));
 	}
 	
 	@PostMapping
@@ -47,9 +52,9 @@ public class ProdutoController {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(objetoProduto));
 	}
 	
-	@DeleteMapping("/{id}")
-	public void Del(@PathVariable long id){
-		repository.deleteById(id);
+	@DeleteMapping("/{codigo}")
+	public void Del(@PathVariable long codigo){
+		repository.deleteById(codigo);
 	}
 	
 }
