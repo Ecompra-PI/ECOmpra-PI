@@ -16,7 +16,7 @@ import com.ecompra.main.model.Usuario;
 import com.ecompra.main.service.UsuarioService;
 
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/usuario")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
 	

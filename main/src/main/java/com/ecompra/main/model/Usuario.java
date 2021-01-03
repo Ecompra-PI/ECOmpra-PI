@@ -17,17 +17,16 @@ public class Usuario {
 	private long codigo;
 	
 	@NotBlank
-	@Size(min = 2, max = 100)
-	private String nomeUsuario;
+	@Size(min = 5, max = 20)
+	private String usuario;
 	
 	@NotBlank
-	@Size(min= 1, max = 200)
+	@Size(min= 5, max = 20)
 	private String email;
 	
 	@NotBlank
-	@Size(min = 5, max = 15)
+	@Size(min = 5, max = 20)
 	private String senha;
-	
 
 	public long getCodigo() {
 		return codigo;
@@ -37,12 +36,12 @@ public class Usuario {
 		this.codigo = codigo;
 	}
 
-	public String getNomeUsuario() {
-		return nomeUsuario;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getEmail() {
@@ -61,6 +60,6 @@ public class Usuario {
 		this.senha = senha;
 	}
 	
-	
+
 	
 }
