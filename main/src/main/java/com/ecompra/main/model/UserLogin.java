@@ -2,13 +2,21 @@ package com.ecompra.main.model;
 
 public class UserLogin {
 	
-	private String usuario; 
+	private String nome;
 	
-	private String email;
+	private String usuario; 
 	
 	private String senha;
 	
 	private String token;
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
 	public String getUsuario() {
 		return usuario;
@@ -16,14 +24,6 @@ public class UserLogin {
 
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getSenha() {
@@ -42,5 +42,6 @@ public class UserLogin {
 		this.token = token;
 	}
 
+	
 	
 }
