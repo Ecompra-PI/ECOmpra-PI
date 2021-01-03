@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.ecompra.main.model.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-	public Optional<Usuario> finByUsuario(String nomeUsuario);
+	public Optional<Usuario> findByUsuario(String nomeUsuario);
 
 }
