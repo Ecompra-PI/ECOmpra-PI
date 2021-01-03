@@ -1,5 +1,5 @@
 # Projeto-integrador
-Projeto integrador realizado pelos alunos da generation Turma 13 :)
+Projeto integrador realizado pelos alunos da generation Turma 13.
 ## Icones
 
 - :package: nova funcionalidade
