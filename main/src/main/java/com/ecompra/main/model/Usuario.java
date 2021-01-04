@@ -26,7 +26,6 @@ public class Usuario {
 	
 	
 	@NotNull
-	@Size(min=1, max=100)
 	private String senha;
 
 
