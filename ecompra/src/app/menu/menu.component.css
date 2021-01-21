@@ -1,0 +1,20 @@
+.bg-bege{
+    background-color: cadetblue;
+}
+.img-logo{
+  height: 3rem;
+  width: 100rem;
+}
+@media (max-width: 1000px){ 
+
+ #medias{
+     display: flex !important;
+     justify-content: center !important;
+ }
+}
+.medias{
+    height: 20rem;
+}
+.bottomresponse{
+    text-align: end;
+}
