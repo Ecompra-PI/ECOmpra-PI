@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "ecompra"
+  "defaultProject": "ecompra",
+  "cli": {
+    "analytics": "37b831b0-fcef-4344-b9d3-4727bdbb9cc0"
+  }
 }
