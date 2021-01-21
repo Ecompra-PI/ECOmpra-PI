@@ -1,0 +1,55 @@
+/* *{
+    background-color:rgb(255, 243, 215);
+} */
+
+.container{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.social{
+    list-style: none;
+    padding: 0px;
+}
+
+ul.social li{
+    display: inline;
+    margin: 0;
+    padding: 0px;
+}
+
+.fa{
+    font-size: 20pt;
+    color:green;
+    padding: 10pt;
+}
+.fa-facebook-square:hover{
+    color: #3b5998;
+}
+.fa-instagram:hover{
+    color:fuchsia
+}
+
+.fa-linkedin-square:hover{
+    color:#0072b1;
+}
+
+.fa-twitter-square:hover{
+    color: #00acee;
+}
+
+.fa-whatsapp:hover{
+    color: rgb(124, 207, 124);
+}
+
+.caixatext{
+    margin-top: 145px;
+}
+
+.mt{
+    margin-top: 50px;
+}
+
+
