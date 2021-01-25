@@ -10,22 +10,27 @@
             <div class="col-md-6 ">
 
                 <div class="form-group">
-                  <label for="inputNome">Nome</label>
-                  <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+                  <label for="inputNome">Nome:</label>
+                  <input type="text" class="form-control" id="nome" placeholder="Digite aqui seu nome">
                 </div>
                 <div class="form-group">
-                    <label for="inputUsuario">Usuario</label>
-                    <input type="text" class="form-control" id="inputUsuario" placeholder="Usuario">
+                    <label for="inputUsuario">Usuário:</label>
+                    <input type="text" class="form-control" id="usuario" placeholder="Digite aqui seu usuário">
                   </div>
                 <div class="form-group">
-                    <label for="inputSenha">Senha</label>
-                    <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
+                    <label for="inputSenha">Senha:</label>
+                    <input type="password" class="form-control" id="senha" placeholder="Senha">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputSenha">Confirmar senha:</label>
+                    <input type="password" class="form-control" id="senha" placeholder="Confirmar senha">
                   </div>
                  
                   
                 <div class="d-flex justify-content-between">
-                  <button type="submit" class="btn btn-danger">Cancelar</button>
-                  <button type="submit" class="btn btn-success">Entrar</button>
+                  
+                  <button type="submit" class="btn btn-success" onkeydown="">Entrar</button>
+                  <button type="submit" class="btn btn-danger" routerLink="/home">Cancelar</button>
                 </div>
             </div>
             
