@@ -19,6 +19,7 @@
 .bottomresponse{
     text-align: end;
 }
+
 .logo{
     background-image: url('..//..//assets/img/ecompra-logo-removebg-preview.png');
     width: auto;
@@ -33,7 +34,6 @@
 .textoMenu{
     font-size: 20px;
 }
-
 
 .iconesRedesSociais{
     width: 75px;
@@ -52,5 +52,4 @@
 }
 .linkedin:hover{
     color: #0072b1;
-
 }
