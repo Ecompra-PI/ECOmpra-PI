@@ -1,4 +1,4 @@
-    /* Outras configurações  */    
+
 .bg-bege{
     background-color: cadetblue;
 }
@@ -20,8 +20,6 @@
     text-align: end;
 }
 
-    
-    /* Configurações que o Bruno fez  */
 .logo{
     background-image: url('..//..//assets/img/ecompra-logo-removebg-preview.png');
     width: auto;
@@ -54,4 +52,5 @@
 }
 .linkedin:hover{
     color: #0072b1;
+
 }
