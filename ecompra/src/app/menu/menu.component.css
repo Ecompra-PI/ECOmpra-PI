@@ -1,3 +1,4 @@
+
 .bg-bege{
     background-color: cadetblue;
 }
@@ -17,4 +18,39 @@
 }
 .bottomresponse{
     text-align: end;
+}
+
+.logo{
+    background-image: url('..//..//assets/img/ecompra-logo-removebg-preview.png');
+    width: auto;
+    height: auto;
+}
+.ata{
+    width: 60%;
+}
+.corFundo{
+    background-color:rgb(255, 243, 215);
+}
+.textoMenu{
+    font-size: 20px;
+}
+
+.iconesRedesSociais{
+    width: 75px;
+    height: 75px;
+    padding: 20px;
+}
+.linkLogin{
+    text-align: end;
+    padding-right: 37px;
+}
+.facebook:hover{
+    color: #3b5998;
+}
+.instagram:hover{
+    color: #c13584;
+}
+.linkedin:hover{
+    color: #0072b1;
+
 }
