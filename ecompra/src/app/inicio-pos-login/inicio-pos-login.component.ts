@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-inicio-pos-login',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPosLoginComponent implements OnInit {
 
+  nomeDoUsuario = environment.nome
+  
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
