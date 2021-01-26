@@ -12,6 +12,7 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     SobrenosComponent,
     ContatoComponent,
     EntrarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    InicioPosLoginComponent
   ],
   imports: [
     BrowserModule,

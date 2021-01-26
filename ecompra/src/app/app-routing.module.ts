@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ContatoComponent } from './contato/contato.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { FooterComponent } from './footer/footer.component';
-
-
 import { HomeComponent } from './home/home.component';
+import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.component';
 import { MenuComponent } from './menu/menu.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
 
@@ -20,7 +20,8 @@ const routes: Routes = [
   {path: 'contato', component: ContatoComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'menu', component: MenuComponent},
-  {path: 'sobrenos', component: SobrenosComponent}
+  {path: 'sobrenos', component: SobrenosComponent},
+  {path: 'inicio-pos-login', component: InicioPosLoginComponent}
 ];
 
 @NgModule({
