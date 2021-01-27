@@ -1,6 +1,38 @@
-.bg-bege{
-    background-color: #C4BB97;
+.bg{
+    background-image: linear-gradient(0deg, var(--degradep),  var(--degrades));
 }
-ol {
-    list-style-type: none;
+
+.titulo{
+    font-size: xx-large;
+}    
+
+a{
+    list-style: none;
+    text-decoration: none;
+    color: gray;
+}
+
+a:hover{
+    color: black;
+}
+
+.fa{
+    font-size: 40pt;
+}
+
+.fa:hover{
+    font-size: 45pt;
+}
+
+.fa-facebook-square:hover{
+    color: #3b5998;
+}
+.fa-instagram:hover{
+    color: #c13584;
+}
+.fa-linkedin-square:hover{
+    color: #0072b1;
+}
+.fa-whatsapp:hover{
+    color:#34af23;
 }
