@@ -5,7 +5,3 @@
     --degradep: rgb(197, 197, 197);
     --degrades: #fff;
 }
-
-body{
-    background-color: var(--cor-de-fundo) !important;
-}
