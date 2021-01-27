@@ -131,5 +131,6 @@
   },
   "defaultProject": "ecompra",
   "cli": {
+    "analytics": "fa8a9e8e-f36a-4ff4-ab6e-831cb9a47c90"
   }
 }
