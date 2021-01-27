@@ -1,0 +1,75 @@
+<div class="container-fluid">
+
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-md-6 pt-3">
+            <div class="row d-flex justify-content-center">
+
+                <div class="col-md-7 d-flex shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="row d-flex justify-content-center">
+                        <h2>Criar uma categoria</h2>
+
+                        <div>
+                            <div class="mb-3">
+                                <label for="inputNome" class="form-label">Nome da categoria:</label>
+                                <input [(ngModel)]='categoria.nome' type="text" class="form-control" id="categoria" aria-describedby="Nome">
+                              </div>
+                              <div class="mb-3">
+                                <label for="inputDescricao" class="form-label">Descrição:</label>
+                                <input type="text" class="form-control" id="descricao">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="inputSetor" class="form-label">Setor:</label>
+                                  <input [(ngModel)]='categoria.setor' type="text" class="form-control" id="setor">
+                              </div>
+                              <div class="d-flex justify-content-end">
+                                  <button type="submit" class="btn btn-success"(click)='cadastrar()'>Submit</button>
+                              </div>
+                        </div>
+                            
+                            
+
+                    </div>
+                   
+                </div>
+               
+
+
+            </div>
+        </div>
+
+        <div class="col-md-5 d-flex justify-content-center">
+            <div class="row pt-3">
+
+                <div class="shadow-lg p-3 mb-5 bg bg-light">
+                    <h2>Produtos</h2>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Estoque</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Shampu orgânico</td>
+                                <td>R$16.90</td>
+                                <td>Shampu feito de bambu</td>
+                                <td>12</td>
+                                <td>
+                                    <a href=""><img class="ed" src="../../assets/img/editar.png" width="20px" height="20px" alt=""></a>
+                                    <a href=""><img class="rm" src="../../assets/img/removido.png" width="20px" height="20px" alt=""></a>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+</div>
