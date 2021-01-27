@@ -13,6 +13,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.com
     ContatoComponent,
     EntrarComponent,
     CadastrarComponent,
-    InicioPosLoginComponent
+    InicioPosLoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
