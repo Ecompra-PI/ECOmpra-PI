@@ -12,8 +12,10 @@ import { AuthService } from '../service/auth.service';
 export class CadastrarComponent implements OnInit {
 
   usuario: Usuario = new Usuario
-  confirmandoSenha: string
-  tipoUsuario: string
+  confirmandoSenha: string //OK
+  tipoUsuario: string //OK
+  nomeUsuarioReal: string
+  usuarioFormulario: string //OK
 
   constructor(
     private authService: AuthService,
@@ -26,17 +28,34 @@ export class CadastrarComponent implements OnInit {
   }
 
   confirmarSenha(event: any){
-    this.confirmandoSenha = event.target.value
+    this.confirmandoSenha = event.target.value //OK
   }
 
   tipoUsuarioMetodo(event: any){
-    this.tipoUsuario = event.target.value
+    this.tipoUsuario = event.target.value //OK
+  }
+
+  validandoNomeUsuario(event: any){
+    this.usuarioFormulario = event.target.value //OK
+  }
+
+  validandoNomeReal(event: any){
+    this.nomeUsuarioReal = event.target.value //OK
   }
 
   cadastrar(){
-    this.usuario.tipo = this.tipoUsuario
+    this.usuario.tipo = this.tipoUsuario //OK
+    this.usuario.nome = this.nomeUsuarioReal //OK
+    this.usuario.usuario = this.usuarioFormulario //OK
+
     if(this.usuario.senha != this.confirmandoSenha){
-      alert('Senha incorreta!')
+      alert('As senhas não conferem!')
+    }else if(this.usuario.nome.length <= 2){
+      alert('Insira um nome maior que 2 caracteres')
+    }else if(this.usuario.usuario.length <= 4){
+      alert('Insira um usuário maior que 4 caracteres')
+    }else if(this.usuario.tipo === null || this.usuario.tipo === undefined){
+      alert('Escolha um tipo de usuário!')
     }else{
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
