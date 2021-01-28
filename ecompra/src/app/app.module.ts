@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -10,6 +12,8 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.component';
+
 
 @NgModule({
   declarations: [
@@ -20,11 +24,14 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     SobrenosComponent,
     ContatoComponent,
     EntrarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    InicioPosLoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,68 @@
-<p>entrar works!</p>
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6 d-flex justify-content-center">
+    
+                <img src="../../assets/img/ecompra-logo-removebg-preview-removebg-preview.png" class=" mg-logo img-fluid" alt="">
+    
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+
+
+            <div class="col-md-5 d-block justify-content-center mg-cadastro bg-light rounded-sm shadow-lg p-3 mb-5 bg-white rounded border">
+                
+                <div class="row">
+                    <div class="d-flex justify-content-start p-2 pl-3">
+                        <h6>Sign up!</h6>
+                    </div>
+                </div>
+                
+                <hr class="bg-dark mt-1">
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+          
+                            
+                                <div class="form-group row" >
+                                  <label for="usuario" class="col-sm-2 col-form-label">Usuário: </label>
+                                  <div class="col-sm-10">
+                                    <input [(ngModel)]='usuarioLogin.usuario' type="text"  class="form-control" id="usuario" placeholder="Digite aqui seu usuário">
+                                  </div>
+                                </div>
+                                <div class="form-group row" >
+                                  <label for="senha" class="col-sm-2 col-form-label">Senha: </label>
+                                  <div class="col-sm-10">
+                                    <input [(ngModel)]='usuarioLogin.senha' type="password" class="form-control" id="senha" placeholder="Digite aqui sua senha">
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2"> </div>
+                                    <div class="col-sm-10">
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1">Lembre-se de mim</label>
+                                          </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-10 d-flex justify-content-start">
+                                        <button type="button" class="btn btn-success" (click)='entrar()'>Enviar</button>
+                                    </div>                                    
+                                </div>
+                                  
+                              
+
+                    </div>
+    
+                </div>
+               
+            </div>
+
+         </div>
+    </div>
+ </div>
