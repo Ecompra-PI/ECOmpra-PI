@@ -10,13 +10,10 @@
   color: #000000;
 }
 
-<<<<<<< HEAD
-    font-size: 45px;
-    color:#000000;
-}
-.setas{
-  
-}
 
-=======
->>>>>>> 30f76b4c3b43de3376875a9de8b36aec2e30053d
+.novidades {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 45px;
+  color: #000000;
+}
