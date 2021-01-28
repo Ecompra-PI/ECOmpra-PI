@@ -1,11 +1,10 @@
 /* Configurações gerais de BG e titulo */
-#fundo {
+/* #fundo {
   background-color: #fff;
-}
+} */
 
 .novidades {
   text-align: center;
-  margin-top: 10px;
   font-size: 45px;
   color: #000000;
 }
