@@ -16,6 +16,11 @@ import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.com
 import { AdminComponent } from './admin/admin.component';
 
 
+
+import { AdminComponent } from './admin/admin.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +32,13 @@ import { AdminComponent } from './admin/admin.component';
     EntrarComponent,
     CadastrarComponent,
     InicioPosLoginComponent,
+<<<<<<< HEAD
     AdminComponent
+=======
+
+    AdminComponent
+
+>>>>>>> f5803ae4f04928d9ab766b09bd478b3bf39e766e
   ],
   imports: [
     BrowserModule,

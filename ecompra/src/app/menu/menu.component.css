@@ -1,11 +1,20 @@
+
+
+.bg-bege{
+    background-color: cadetblue;
+}
+
 .img-logo{
     width: 20%;
 }
+
+
 
 .fa{
     font-size: 30pt;
     color: #34af23;
     transition: all 0.2s;
+
 }
 
 
@@ -21,6 +30,7 @@
 }
 .fa-linkedin-square:hover{
     color: #0072b1;
+
 }
 .fa-whatsapp:hover{
     color:#34af23;
@@ -36,4 +46,5 @@
 .bag:hover{
     width: 55px;
     margin-bottom: 0px;
+
 }
