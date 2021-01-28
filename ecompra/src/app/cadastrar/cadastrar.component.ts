@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 
@@ -17,8 +18,10 @@ export class CadastrarComponent implements OnInit {
   nomeUsuarioReal: string
   usuarioFormulario: string //OK
 
+  public admin: boolean = true
+
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router
   ) { }
 
@@ -42,9 +45,14 @@ export class CadastrarComponent implements OnInit {
   validandoNomeReal(event: any){
     this.nomeUsuarioReal = event.target.value //OK
   }
-
+  
   cadastrar(){
-    this.usuario.tipo = this.tipoUsuario //OK
+    if(environment.token != ''){
+      this.usuario.tipo = this.tipoUsuario
+    }else{
+      this.usuario.tipo = "normal" //OK
+    }
+
     this.usuario.nome = this.nomeUsuarioReal //OK
     this.usuario.usuario = this.usuarioFormulario //OK
 
@@ -59,6 +67,7 @@ export class CadastrarComponent implements OnInit {
     }else{
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
+
         this.router.navigate(['/entrar'])
         alert('Cadastro realizado com sucesso!')
       })

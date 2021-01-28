@@ -28,9 +28,10 @@ export class EntrarComponent implements OnInit {
 
       environment.codigo = this.usuarioLogin.codigo
       environment.nome = this.usuarioLogin.nome
+      environment.token = this.usuarioLogin.token
                                 // console.log(environment.codigo) testes
                                 // console.log(environment.nome)   testes
-      this.router.navigate(['/inicio-pos-login'])
+      this.router.navigate(['/admin'])
     }, retornoErro => {
       if (retornoErro.status == 500) {
         alert('Usuário ou senha inválidos!')

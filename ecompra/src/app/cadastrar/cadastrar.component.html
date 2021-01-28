@@ -1,6 +1,9 @@
 <div class="container cor col-md-6 mt-4  justify-content-center">
-  <h1 class="text-center">Cadastre-se</h1>
-  <p class="text-center">Preencha o formulário abaixo</p>
+  <div *ngIf="admin == false">
+
+    <h1 class="text-center">Cadastre-se</h1>
+    <p class="text-center">Preencha o formulário abaixo</p>
+  </div>
   <hr>
   <div class="form-row d-flex justify-content-center">
     <div class="col-md-6 ">
@@ -23,7 +26,8 @@
         <input [(ngModel)]='usuario.senha' type="password" class="form-control" id="senhaConfirmacao"
           placeholder="Confirmar senha">
       </div>
-      <div class="form-group">
+      
+      <div class="form-group" *ngIf = "authService.logado()">
         <label for="tipoUsuario">Tipo usuário:</label>
         <select class="form-control" (change)='tipoUsuarioMetodo($event)'>
           <option value="ausente">Selecione o usuário</option>

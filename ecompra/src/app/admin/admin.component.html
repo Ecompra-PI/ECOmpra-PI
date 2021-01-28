@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-<!-- forms -->
+    <!-- forms -->
     <div class="row d-flex justify-content-center">
 
         <div class="col-md-12">
@@ -21,16 +21,16 @@
                             <div>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Nome da categoria:</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Descrição:</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                    <input type="text" class="form-control" id="exampleInputPassword1">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Setor:</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                    <input type="text" class="form-control" id="exampleInputPassword1">
                                 </div>
                                 <div class="d-flex justify-content-end">
                                     <button type="submit" class="btn btn-success">Submit</button>
@@ -67,99 +67,127 @@
 
 
             </div>
+            <!-- cadastrar -->
+
+                <p class="text-center ">
+                    <a class="btn btn-success mr-2" data-toggle="collapse" href="#bottoncadastrar" role="button"
+                        aria-expanded="false" aria-controls="bottoncadastrar">Cadastrar usuário</a>
+                </p>
+    
+                <div class="row d-flex justify-content-center mb-5">
+                    <div class="col-md-10">
+                        <div class="collapse multi-collapse" id="bottoncadastrar">
+                            <div class="card card-body">
+                                <div>
+                                    <app-cadastrar></app-cadastrar>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+           
+
+
 
         </div>
 
     </div>
-<!-- /forms -->
-
-<!-- Acordeão -->
+    <!-- /forms -->
+    
+    <!-- Acordeão -->
     <div class="accordion" id="accordionExample">
 
         <!-- Acordeão 1 -->
         <div class="card">
-          <div class="card-header d-flex justify-content-center" id="headingTwo">
-            <h2 class="mb-0">
-              <button class="btn btn-outline-success btn-lg text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Tabela de categorias
-              </button>
-            </h2>
-          </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-                <div class="shadow-lg p-3 mb-5 bg bg-light">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Código</th>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Descrição</th>
-                                <th scope="col">Setor</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Shampu orgânico</td>
-                                <td>R$16.90</td>
-                                <td>Shampu feito de bambu</td>
-                                <td>
-                                    <i class="far fa-edit"></i>
-                                    <a href=""><img class="rm" src="../../assets/img/removido.png" width="20px"
-                                            height="20px" alt=""></a>
-                                </td>
-                            </tr>
-                    </table>
+            <div class="card-header d-flex justify-content-center" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-outline-success btn-lg text-center collapsed" type="button"
+                        data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Tabela de categorias
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="shadow-lg p-3 mb-5 bg bg-light">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Setor</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Shampu orgânico</td>
+                                    <td>R$16.90</td>
+                                    <td>Shampu feito de bambu</td>
+                                    <td>
+                                        <i class="far fa-edit"></i>
+                                        <a href=""><img class="rm" src="../../assets/img/removido.png" width="20px"
+                                                height="20px" alt=""></a>
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
-          </div>
         </div>
 
         <!-- Acordeão 2 -->
         <div class="card">
-          <div class="card-header d-flex justify-content-center" id="headingThree">
-            <h2 class="mb-0">
-              <button class="btn btn-outline-success text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Tabela de produtos
-              </button>
-            </h2>
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-                <div class="shadow-lg p-3 mb-5 bg bg-light">
-
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Código</th>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Preço</th>
-                                <th scope="col">Descrição</th>
-                                <th scope="col">Estoque</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Shampu orgânico</td>
-                                <td>R$16.90</td>
-                                <td>Shampu feito de bambu</td>
-                                <td>12</td>
-                                <td>
-
-                                    <a href=""><img class="ed" src="../../assets/img/editar.png" width="20px"
-                                            height="20px" alt=""></a>
-                                    <a href=""><img class="rm" src="../../assets/img/removido.png" width="20px"
-                                            height="20px" alt=""></a>
-                                </td>
-                            </tr>
-                    </table>
-                </div>               
+            <div class="card-header d-flex justify-content-center" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-outline-success text-center collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Tabela de produtos
+                    </button>
+                </h2>
             </div>
-          </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="shadow-lg p-3 mb-5 bg bg-light">
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Preço</th>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Estoque</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Shampu orgânico</td>
+                                    <td>R$16.90</td>
+                                    <td>Shampu feito de bambu</td>
+                                    <td>12</td>
+                                    <td>
+
+                                        <a href=""><img class="ed" src="../../assets/img/editar.png" width="20px"
+                                                height="20px" alt=""></a>
+                                        <a href=""><img class="rm" src="../../assets/img/removido.png" width="20px"
+                                                height="20px" alt=""></a>
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
-      </div>
-<!-- Acordeão -->
+    </div>
+    <!-- Acordeão -->
 
+
+</div>
