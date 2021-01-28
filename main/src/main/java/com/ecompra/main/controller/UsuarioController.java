@@ -35,9 +35,11 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> Post(@Valid @RequestBody Usuario usuario){
 		/*if(usuario.getSenha().isEmpty() || usuario.getSenha().isBlank()) {
 		 return ResponseEntity.badRequest().build();                       método com if
-		}else{ */		
+		}else{ 		
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(usuarioService.CadastrarUsuario(usuario));
+				.body(usuarioService.CadastrarUsuario(usuario));*/
+		
+		return usuarioService.CadastrarUsuario(usuario);
 		}
 	}
 
