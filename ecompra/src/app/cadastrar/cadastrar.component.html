@@ -1,6 +1,3 @@
-<div class="bg-dark"><img class="brotinho" src="../../assets/img/brotinhoIcone.png" alt="imagem">
-</div>
-
 <div class="container cor col-md-6 mt-4  justify-content-center">
   <h1 class="text-center">Cadastre-se</h1>
   <p class="text-center">Preencha o formulário abaixo</p>
@@ -9,11 +6,11 @@
     <div class="col-md-6 ">
       <div class="form-group">
         <label for="nome">Nome:</label>
-        <input [(ngModel)]='usuario.nome' type="text" class="form-control" id="nome" placeholder="Digite aqui seu nome">
+        <input [(ngModel)]='usuario.nome' (input)='validandoNomeReal($event)' type="text" class="form-control" id="nome" placeholder="Digite aqui seu nome">
       </div>
       <div class="form-group">
         <label for="usuarioFormulario">Usuário:</label>
-        <input [(ngModel)]='usuario.usuario' type="text" class="form-control" id="usuarioFormulario"
+        <input [(ngModel)]='usuario.usuario' (input)='validandoNomeUsuario($event)' type="text" class="form-control" id="usuarioFormulario"
           placeholder="Digite aqui seu usuário">
       </div>
       <div class="form-group">
@@ -29,16 +26,16 @@
       <div class="form-group">
         <label for="tipoUsuario">Tipo usuário:</label>
         <select class="form-control" (change)='tipoUsuarioMetodo($event)'>
-          <option>Selecione o usuário</option>
+          <option value="ausente">Selecione o usuário</option>
           <option value="normal">Normal</option>
           <option value="administrador">Administrador</option>
         </select>
       </div>
 
       <div class="d-flex justify-content-between">
-        <button type="submit" class="btn btn-success" onkeydown="" id="botaoEntrar"
+        <button type="submit" class="btn btn-outline-danger" routerLink="/home" id="botaoCancelar">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" onkeydown="" id="botaoEntrar"
           (click)='cadastrar()'>Cadastrar</button>
-        <button type="submit" class="btn btn-danger" routerLink="/home" id="botaoCancelar">Cancelar</button>
       </div>
     </div>
   </div>
