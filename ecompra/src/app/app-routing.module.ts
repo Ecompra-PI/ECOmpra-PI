@@ -4,6 +4,7 @@ import { AdminComponent } from './admin/admin.component';
 
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ContatoComponent } from './contato/contato.component';
+import { EditarDeletarComponent } from './editar-deletar/editar-deletar/editar-deletar.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'menu', component: MenuComponent},
   {path: 'sobrenos', component: SobrenosComponent},
   {path: 'inicio-pos-login', component: InicioPosLoginComponent},
-  {path: 'admin', component: AdminComponent}
+  {path: 'admin', component: AdminComponent},
+  {path: 'editar-deletar/:codigo', component: EditarDeletarComponent}
 ];
 
 @NgModule({
