@@ -42,8 +42,6 @@ export class AdminComponent implements OnInit {
       this.findAllCadastrar()
       this.categoria = new Categoria()
     })
-   
-
   }
 
 }
