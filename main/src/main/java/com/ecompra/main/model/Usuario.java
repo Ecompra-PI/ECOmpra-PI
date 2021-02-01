@@ -27,7 +27,7 @@ public class Usuario {
 	
 	@NotBlank
 	private String senha;
-
+	
 
 	public long getCodigo() {
 		return codigo;
