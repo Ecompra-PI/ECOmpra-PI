@@ -60,6 +60,7 @@
                                 <div class="mb-3">
                                     <label for="preco" class="form-label">Preço:</label>
                                     <input [(ngModel)]="produto.preco" type="text" class="form-control" id="preco">
+
                                 </div>
 
                                 <div class="mb-3">
@@ -142,14 +143,14 @@
 
                             <tbody>
                                 <tr *ngFor="let cat of listaCategoria">
+
                                     <th>{{cat.codigo}}</th>
+
                                     <td>{{cat.nome}}</td>
                                     <td>{{cat.descricao}}</td>
                                     <td>{{cat.setor}}</td>
                                     <td>
-                                        <i class="far fa-edit"></i>
-                                        <a href=""><img class="rm" src="../../assets/img/removido.png" width="20px"
-                                                height="20px" alt=""></a>
+                                        <button class="btn btn-outline-info" [routerLink]="['/editar-deletar', cat.codigo]"> MODIFICAÇÕES </button>
                                     </td>
                                 </tr>
                         </table>
@@ -162,9 +163,11 @@
         <div class="card">
             <div class="card-header d-flex justify-content-center" id="headingThree">
                 <h2 class="mb-0">
+
                     <button class="btn btn-outline-success btn-lg text-center collapsed" type="button"
                         data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
                         aria-controls="collapseThree">
+
                         Tabela de produtos
                     </button>
                 </h2>
@@ -187,7 +190,9 @@
                             </thead>
 
                             <tbody>
+
                                 <tr *ngFor="let prod of listProdutos">
+
                                     <th>{{prod.codigo}}</th>
                                     <td>{{prod.nome}}</td>
                                     <td>{{prod.preco}}</td>
@@ -195,9 +200,17 @@
                                     <td>{{prod.quantidade}}</td>
                                     <td>{{prod.categoria.nome}}</td>
                                     <td>
+
                                         <a class="mr-3"><i class="ed fa fa-pencil-square-o"
                                                 aria-hidden="true"></i></a>
                                         <a data-toggle="modal" data-target="#exampleModal"><i class="rm fa fa-trash" aria-hidden="true"></i></a>
+
+
+                                        <a href=""><img class="ed" src="../../assets/img/editar.png" width="20px"
+                                                height="20px" alt=""></a>
+                                        <a href=""><img class="rm" src="../../assets/img/removido.png" width="20px"
+                                                height="20px" alt=""></a>
+
                                     </td>
                                 </tr>
                             </tbody>
@@ -209,6 +222,7 @@
         </div>
 
     </div>
+
     <!-- Acordeão -->
 </div>
 
@@ -233,3 +247,6 @@
       </div>
     </div>
   </div>
+
+    <!-- Acordeão -->
+
