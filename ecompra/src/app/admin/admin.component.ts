@@ -18,12 +18,13 @@ export class AdminComponent implements OnInit {
   produto: Produto = new Produto
   listProdutos: Produto[]
 
-  categoriaValidacao: Categoria
-  promocaoValida: string
-  promocao: boolean
-
   categoria: Categoria = new Categoria
   listaCategoria: Categoria[]
+
+  promo: string
+  promoFinal: boolean
+  idCat: number
+  categoriaProduto: Categoria
 
   constructor (
     private router: Router,
@@ -40,17 +41,24 @@ export class AdminComponent implements OnInit {
     this.findAllProdutos()
   }
 
-  validacaoCategoria(event: any){
-    this.categoriaValidacao.codigo = event.target.value
-  }
-
-  validacaoPromocao(event: any){
-    this.promocaoValida = event.target.value
+  validaPromo(event: any){
+    this.promo = event.target.value
+    if(this.promo == "true"){
+      this.promoFinal = true
+    }else{
+      this.promoFinal = false
+    }
   }
 
   findAllCadastrar(){
     this.categriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
       this.listaCategoria = resp
+    })
+  }
+
+  findByIdCategoria(){
+    this.categriaService.getById(this.idCat).subscribe((resp: Categoria) => {
+      this.categoriaProduto = resp
     })
   }
 
@@ -70,35 +78,18 @@ export class AdminComponent implements OnInit {
   }
 
   cadastrarProduto(){
+    this.categoriaProduto.codigo = this.idCat
     
-    // if(this.categoriaValidacao.codigo == 0){
-    //   alert('Selecione uma categoria')
-    // }else{
-      this.produto.codigo = this.categoriaValidacao.codigo
-    // }
-
-    // if(this.promocaoValida == "selecione"){
-    //   alert('Selecione se o produto está em promoção')
-    // }else{
-    //   var promocao: boolean = false
-    //   if(this.promocaoValida == "true"){
-    //     promocao = true
-    //   }
-      this.produto.promocao = false
-    // }
+    this.produto.categoria = this.categoriaProduto
+    this.produto.promocao = this.promoFinal
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
       alert("Produto cadastrado com sucesso!")
-      this.findAllProdutos
+      this.findAllProdutos()
       this.produto = new Produto()
 
     })
   }
 
-  testeCadastro(){
-    console.log(this.produto)
-    console.log(this.produto.promocao)
-    console.log(this.produto.categoria)
-  }
 }
