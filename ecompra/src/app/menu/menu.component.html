@@ -49,7 +49,7 @@
         <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" routerLink='/contato' role="tab"
           aria-controls="nav-contact" aria-selected="false">Contato</a>
 
-        <a class="nav-item nav-link" id="nav-admin-tab" data-toggle="tab" routerLink='/admin' role="tab"
+        <a *ngIf = 'administrador() == true' class="nav-item nav-link" id="nav-admin-tab" data-toggle="tab" routerLink='/admin' role="tab"
           aria-controls="nav-admin" aria-selected="false">Administrador</a>
 
       </div>

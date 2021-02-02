@@ -16,4 +16,14 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  administrador(){
+    let aparecer: boolean = false
+
+    if(environment.tipoUsuario == 'administrador'){
+      aparecer = true
+    }
+    return aparecer
+  }
+
+
 }

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { Categoria } from '../model/Categoria';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 
@@ -52,9 +50,9 @@ export class CadastrarComponent implements OnInit {
   cadastrar(){
     environment.paginaAtual = ''
     if(environment.token != ''){
-      this.usuario.tipo = this.tipoUsuario
+      this.usuario.tipoUsuario = this.tipoUsuario
     }else{
-      this.usuario.tipo = "normal" //OK
+      this.usuario.tipoUsuario = "normal" //OK
     }
 
     this.usuario.nome = this.nomeUsuarioReal //OK
@@ -69,7 +67,7 @@ export class CadastrarComponent implements OnInit {
       alert('Insira um nome maior que 2 caracteres')
     }else if(this.usuario.usuario.length <= 4){
       alert('Insira um usuário maior que 4 caracteres')
-    }else if(this.usuario.tipo === null || this.usuario.tipo === undefined){
+    }else if(this.usuario.tipoUsuario === null || this.usuario.tipoUsuario === undefined){
       alert('Escolha um tipo de usuário!')
     }else{
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
@@ -80,6 +78,4 @@ export class CadastrarComponent implements OnInit {
       })
     }
   }
-
-
 }
