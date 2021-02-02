@@ -27,8 +27,12 @@ export class CadastrarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0),
-    environment.paginaAtual = 'cadastro' 
+    window.scroll(0,0)
+
+    if(environment.paginaAtual != "admin"){
+      environment.paginaAtual == 'cadastro'
+    } 
+
   }
 
   confirmarSenha(event: any){
@@ -48,8 +52,7 @@ export class CadastrarComponent implements OnInit {
   }
   
   cadastrar(){
-    environment.paginaAtual = ''
-    if(environment.token != ''){
+    if(environment.tipoUsuario == 'administrador'){
       this.usuario.tipoUsuario = this.tipoUsuario
     }else{
       this.usuario.tipoUsuario = "normal" //OK
@@ -73,8 +76,16 @@ export class CadastrarComponent implements OnInit {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
 
+        
+        if(environment.paginaAtual == "admin"){
+          alert('Cadastro realizado com sucesso!')
+        }else{
         this.router.navigate(['/entrar'])
         alert('Cadastro realizado com sucesso!')
+        }
+        
+        environment.paginaAtual = ''
+        
       })
     }
   }

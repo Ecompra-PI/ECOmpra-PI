@@ -72,7 +72,8 @@
                                 <div class="mb-3">
 
                                     <label for="promocao" class="form-label">Promoção:</label>
-                                    <select [(ngModel)] = "promo" class="form-control" name="promocao" id="promocao" (change) = "validaPromo($event)">
+                                    <select [(ngModel)]="promo" class="form-control" name="promocao" id="promocao"
+                                        (change)="validaPromo($event)">
                                         <option value="selecione">Selecione uma opção</option>
                                         <option value="true">Sim</option>
                                         <option value="false">Não</option>
@@ -83,7 +84,8 @@
 
                                 <div class="mb-3">
                                     <label for="categoria" class="form-label">Categoria:</label>
-                                    <select class="form-control" name="categoria" id="categoria"  [(ngModel)] = "idCat" (change) = "findByIdCategoria()">
+                                    <select class="form-control" name="categoria" id="categoria" [(ngModel)]="idCat"
+                                        (change)="findByIdCategoria()">
                                         <option value="0">Selecione uma categoria</option>
                                         <option *ngFor="let categoria of listaCategoria" [value]="categoria.codigo">
                                             {{categoria.nome}}</option>
@@ -105,6 +107,26 @@
 
 
             </div>
+
+
+
+            <p class="text-center ">
+                <a class="btn btn-success mr-2" data-toggle="collapse" href="#usuarioCadastro" role="button"
+                    aria-expanded="false" aria-controls="usuarioCadastro">Cadastrar usuario</a>
+
+            </p>
+            <div class="row d-flex justify-content-center pb-4">
+                <div class="col-md-6">
+                    <div class="collapse multi-collapse" id="usuarioCadastro">
+                        <div class="card card-body">
+                            <div>
+                                <app-cadastrar></app-cadastrar>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
 
@@ -150,7 +172,8 @@
                                     <td>{{cat.descricao}}</td>
                                     <td>{{cat.setor}}</td>
                                     <td>
-                                        <button class="btn btn-outline-info" [routerLink]="['/editar-deletar', cat.codigo]"> MODIFICAÇÕES </button>
+                                        <button class="btn btn-outline-info"
+                                            [routerLink]="['/editar-deletar', cat.codigo]"> MODIFICAÇÕES </button>
                                     </td>
                                 </tr>
                         </table>
@@ -192,21 +215,18 @@
                             <tbody>
 
                                 <tr *ngFor="let prod of listProdutos">
-
                                     <th>{{prod.codigo}}</th>
-                                    <td>{{prod.nome}}</td>
-                                    <td>{{prod.preco}}</td>
-                                    <td>{{prod.descricao}}</td>
-                                    <td>{{prod.quantidade}}</td>
-                                    <td>{{prod.categoria.nome}}</td>
-                                    
-                                    <td>
-                                        <a class="mr-3"><i class="ed fa fa-pencil-square-o"
-                                                aria-hidden="true"></i></a>
-                                        <a data-toggle="modal" data-target="#exampleModal"><i class="rm fa fa-trash" aria-hidden="true"></i></a>
-                                    </td>
-
+                                    <th>{{prod.nome}}</th>
+                                    <th>{{prod.descricao}}</th>
+                                    <th>{{prod.preco}}</th>
+                                    <th>{{prod.promocao}}</th>
+                                    <th>{{prod.quantidade}}</th>
+                                    <th>
+                                        <button class="btn btn-outline-info"
+                                            [routerLink]="['/editar-deletar', cat.codigo]"> MODIFICAÇÕES </button>
+                                    </th>
                                 </tr>
+
                             </tbody>
 
                         </table>
@@ -224,23 +244,22 @@
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
-        <div class="modal-body">
-      
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
-    <!-- Acordeão -->
-
+<!-- Acordeão -->

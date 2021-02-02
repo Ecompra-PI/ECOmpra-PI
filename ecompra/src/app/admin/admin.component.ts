@@ -34,6 +34,8 @@ export class AdminComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    environment.paginaAtual = "admin"
+    
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }

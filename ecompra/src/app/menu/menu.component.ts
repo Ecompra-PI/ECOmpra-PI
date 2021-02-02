@@ -9,9 +9,11 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+
   imglog = environment.imglogo
   cadastro: boolean
-  nomeUsuario = environment.nome
+  nomeUsuario: string
+
 
   constructor( 
     public authService: AuthService,
@@ -19,6 +21,9 @@ export class MenuComponent implements OnInit {
    ) { }
 
   ngOnInit() {
+
+  this.nomeUsuario = environment.nome 
+
   }
 
   administrador(){
@@ -31,11 +36,16 @@ export class MenuComponent implements OnInit {
   }
 
   sair(){
+    console.log(environment.codigo)
+    console.log(environment.nome)
+    console.log(environment.token)
+    console.log(environment.tipoUsuario)
+    
       environment.codigo = 0
       environment.nome = ''
       environment.token = ''
       environment.tipoUsuario = ''
-    this.router.navigate(['/home'])
+      this.router.navigate(['/home'])
   }
 
 }
