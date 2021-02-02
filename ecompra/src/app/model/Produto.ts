@@ -8,4 +8,5 @@ export class Produto{
     public quantidade: number
     public promocao: boolean
     public categoria: Categoria
+    public foto: string
 }

@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'inicio-pos-login', component: InicioPosLoginComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'editar-deletar/:codigo', component: EditarDeletarComponent},
-  {path: 'pagina-produtos/:codigo', component: PaginaProdutosComponent}
+  {path: 'pagina-produtos', component: PaginaProdutosComponent}
 ];
 
 @NgModule({

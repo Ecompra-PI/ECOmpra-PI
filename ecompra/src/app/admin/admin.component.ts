@@ -78,11 +78,14 @@ export class AdminComponent implements OnInit {
   }
 
   cadastrarProduto(){
+
+    console.log(this.produto.foto)
+    
     this.categoriaProduto.codigo = this.idCat
     
     this.produto.categoria = this.categoriaProduto
     this.produto.promocao = this.promoFinal
-
+    
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
       alert("Produto cadastrado com sucesso!")
