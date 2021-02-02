@@ -35,6 +35,7 @@ export class EntrarComponent implements OnInit {
       environment.nome = this.usuarioLogin.nome
       environment.token = this.usuarioLogin.token
       environment.tipoUsuario = this.usuarioLogin.tipoUsuario
+      console.log(environment.nome)
                                 // console.log(environment.codigo) testes
                                 // console.log(environment.nome)   testes
       if(environment.tipoUsuario == 'administrador'){

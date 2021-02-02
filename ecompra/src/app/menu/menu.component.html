@@ -22,7 +22,12 @@
         <div>
 
           <img class="bag" src="../../assets/img/menu/sacola.png" alt="">
-          <button class="btn btn-outline-success" routerLink='/entrar'>Entrar</button>
+          <button class="btn btn-outline-success" routerLink='/entrar' *ngIf = 'authService.logado() == false'>Entrar</button>
+          
+          <div *ngIf = 'authService.logado() == true'>
+            <p> Bem vinde, {{nomeUsuario}}.</p>
+            <p class='text-align-end'> <a (click)='sair()' routerLink='/home'> Sair </a> </p>
+          </div>
 
         </div>
       </div>
