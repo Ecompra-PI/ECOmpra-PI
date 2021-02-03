@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 import { AdminComponent } from './admin/admin.component';
+import { ApoiadoresParceirosComponent } from './apoiadores-parceiros/apoiadores-parceiros.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ContatoComponent } from './contato/contato.component';
 import { EditarDeletarProdutoComponent } from './editar-deletar/editar-deletar-produto/editar-deletar-produto.component';
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'editar-deletar/:codigo', component: EditarDeletarComponent},
   {path: 'pagina-produtos', component: PaginaProdutosComponent},
-  {path: 'editar-deletar-produto/:codigo', component: EditarDeletarProdutoComponent}
+  {path: 'editar-deletar-produto/:codigo', component: EditarDeletarProdutoComponent},
+  {path: 'apoiadores-parceiros', component: ApoiadoresParceirosComponent}
 ];
 
 @NgModule({
