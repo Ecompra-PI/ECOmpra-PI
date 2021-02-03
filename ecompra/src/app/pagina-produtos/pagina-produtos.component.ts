@@ -16,8 +16,15 @@ export class PaginaProdutosComponent implements OnInit {
   produto: Produto
 
   idCat: number
+
   idProduto: number
   nomeProduto: string
+  precoProduto: number
+  descricaoProduto: string
+  quantidadeProduto: number
+  promocaoProduto: boolean
+  categoriaProduto: string
+  fotoProduto: string
 
   listaCategorias: Categoria[]
   categoria: Categoria
@@ -42,6 +49,11 @@ export class PaginaProdutosComponent implements OnInit {
       this.produto = resp
       this.nomeProduto  = this.produto.nome
       this.idProduto = this.produto.codigo
+      this.precoProduto = this.produto.preco
+      this.descricaoProduto = this.produto.descricao
+      this.quantidadeProduto = this.produto.quantidade
+      this.fotoProduto = this.produto.foto
+      this.promocaoProduto = this.produto.promocao     
     })
   }
 

@@ -35,8 +35,7 @@ export class EntrarComponent implements OnInit {
       environment.nome = this.usuarioLogin.nome
       environment.token = this.usuarioLogin.token
       environment.tipoUsuario = this.usuarioLogin.tipoUsuario
-
-      console.log(environment.nome)
+      
       if(environment.tipoUsuario == 'administrador'){
         this.router.navigate(['/admin'])
         environment.paginaAtual = ''
