@@ -16,6 +16,8 @@ import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.com
 import { AdminComponent } from './admin/admin.component';
 import { EditarDeletarComponent } from './editar-deletar/editar-deletar/editar-deletar.component';
 import { PaginaProdutosComponent } from './pagina-produtos/pagina-produtos.component';
+import { EditarDeletarProdutoComponent } from './editar-deletar/editar-deletar-produto/editar-deletar-produto.component';
+import { SacolaCompraComponent } from './sacola-compra/sacola-compra.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { PaginaProdutosComponent } from './pagina-produtos/pagina-produtos.compo
     InicioPosLoginComponent,
     AdminComponent,
     EditarDeletarComponent,
-    PaginaProdutosComponent
+    PaginaProdutosComponent,
+    EditarDeletarProdutoComponent,
+    SacolaCompraComponent
   ],
   imports: [
     BrowserModule,

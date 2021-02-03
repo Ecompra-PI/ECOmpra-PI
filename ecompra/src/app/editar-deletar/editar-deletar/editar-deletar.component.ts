@@ -14,6 +14,7 @@ export class EditarDeletarComponent implements OnInit {
   
   categoria: Categoria = new Categoria
   codigoCategoria: number
+  codigoCategoriaDeletar: number
   nomeAntigo: string
   descricaoAntiga: string
   setorAntigo: string
@@ -39,6 +40,8 @@ export class EditarDeletarComponent implements OnInit {
   findByIdCategoria(codigo: number){
     this.categoriaService.getByIdCategoria(codigo).subscribe((resp: Categoria) =>{
     this.categoria = resp 
+
+    this.codigoCategoriaDeletar = this.categoria.codigo
     this.nomeAntigo = this.categoria.nome
     this.descricaoAntiga = this.categoria.descricao
     this.setorAntigo = this.categoria.setor
@@ -53,8 +56,8 @@ export class EditarDeletarComponent implements OnInit {
     })
   }
 
-  apagar(){
-    this.categoriaService.deleteCategoria(this.codigoCategoria).subscribe(()=>{
+  apagar(id: number){
+    this.categoriaService.deleteCategoria(id).subscribe(()=>{
       alert('Categoria apagada com sucesso!')
       this.router.navigate(['/admin'])
     })

@@ -13,8 +13,11 @@ export class PaginaProdutosComponent implements OnInit {
 
   listaProdutos: Produto[]
   listaCatProd: Produto[]
+  produto: Produto
 
   idCat: number
+  idProduto: number
+  nomeProduto: string
 
   listaCategorias: Categoria[]
   categoria: Categoria
@@ -34,6 +37,13 @@ export class PaginaProdutosComponent implements OnInit {
       this.listaProdutos = resp
     })
   }
+  getProdutoById(id: number){
+    this.produtosService.getProdutoById(id).subscribe((resp: Produto) => {
+      this.produto = resp
+      this.nomeProduto  = this.produto.nome
+      this.idProduto = this.produto.codigo
+    })
+  }
 
   getAllCategoria(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
@@ -48,5 +58,4 @@ export class PaginaProdutosComponent implements OnInit {
       console.log(this.listaCatProd)
     })
   }
-
 }

@@ -1,49 +1,82 @@
 <div class="row mt-5 ">
-    <div class="col-md-2">
-      <div class="nav flex-column nav-pills container text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active mb-3 ml-3" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Todos os Produtos</a>
+  <div class="col-md-2">
+    <div class="nav flex-column nav-pills container text-center" id="v-pills-tab" role="tablist"
+      aria-orientation="vertical">
+      <a class="nav-link active mb-3 ml-3" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+        aria-controls="v-pills-home" aria-selected="true">Todos os Produtos</a>
 
-        <a *ngFor='let i of listaCategorias' (click)='findByIdCategoria(i.codigo)'  class="nav-link mb-3 ml-3" id="v-pills-categoria-tab" data-toggle="pill" href="#v-pills-categoria" role="tab" aria-controls="v-pills-categoria" aria-selected="true">{{i.nome}}</a>
-        
-      </div>
-    </div>
-    <div class="col-md-9">
-      <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            <div class="card-columns">
-            <div class="card shadow-lg rounded" *ngFor='let p of listaProdutos'>
-                <div class="card-img-wrapper">
-                  <img src="{{p.foto}}" alt="">
-                </div>
-                <div class="card-info">
-                  <h2>{{p.nome}}</h2>
-                  <h3>{{p.categoria.nome}}</h3>
-                  <p>{{p.descricao}}</p>
-                  <button class="btn">Saiba mais</button>
-                </div>
-              </div>
-            </div>
+      <a *ngFor='let i of listaCategorias' (click)='findByIdCategoria(i.codigo)' class="nav-link mb-3 ml-3"
+        id="v-pills-categoria-tab" data-toggle="pill" href="#v-pills-categoria" role="tab"
+        aria-controls="v-pills-categoria" aria-selected="true">{{i.nome}}</a>
 
-
-        </div>
-        <div class="tab-pane fade" id="v-pills-categoria" role="tabpanel" aria-labelledby="v-pills-categoria-tab">
-          
-            <div class="card-columns">
-                <div class="card shadow-lg rounded" *ngFor='let c of listaCatProd'>
-                    <div class="card-img-wrapper">
-                      <img src="{{c.foto}}" alt="">
-                    </div>
-                    <div class="card-info">
-                      <h2>{{c.nome}}</h2>
-                      <h3>{{c.categoria}}</h3>
-                      <p>{{c.descricao}}</p>
-                      <button class="btn">Saiba mais</button>
-                    </div>
-                  </div>
-                </div>
-            
-        </div>
-        
-      </div>
     </div>
   </div>
+  
+  <div class="col-md-9">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <div class="card-columns">
+          <div class="card shadow-lg rounded" *ngFor='let p of listaProdutos'>
+            <div class="card-img-wrapper">
+              <img src="{{p.foto}}" alt="">
+            </div>
+            <div class="card-info">
+              <h2>{{p.nome}}</h2>
+              <h3>{{p.categoria.nome}}</h3>
+              <p>{{p.descricao}}</p>
+              <button class="btn" (click)="getProdutoById(p.codigo)" data-toggle="modal" data-target="#saibaMais">Saiba
+                mais</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="tab-pane fade" id="v-pills-categoria" role="tabpanel" aria-labelledby="v-pills-categoria-tab">
+
+        <div class="card-columns">
+          <div class="card shadow-lg rounded" *ngFor='let c of listaCatProd'>
+            <div class="card-img-wrapper">
+              <img src="{{c.foto}}" alt="">
+            </div>
+            <div class="card-info">
+              <h2>{{c.nome}}</h2>
+              <h3>{{c.categoria}}</h3>
+              <p>{{c.descricao}}</p>
+              <button class="btn" (click)="getProdutoById(c.codigo)" data-toggle="modal" data-target="#saibaMais">Saiba mais</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="saibaMais" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">{{nomeProduto}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        
+      </div>
+
+      <div class="modal-footer d-flex justify-content-between">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" [routerLink]="['/sacola-comprar', idProduto]"
+        data-dismiss="modal">Comprar</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
