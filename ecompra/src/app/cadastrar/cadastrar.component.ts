@@ -79,6 +79,8 @@ export class CadastrarComponent implements OnInit {
         
         if(environment.paginaAtual == "admin"){
           alert('Cadastro realizado com sucesso!')
+          this.usuario = new Usuario()
+          this.confirmandoSenha = ''
         }else{
         this.router.navigate(['/entrar'])
         alert('Cadastro realizado com sucesso!')
