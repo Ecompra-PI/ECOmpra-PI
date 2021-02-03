@@ -22,6 +22,7 @@
 .fa{
   font-size: 35pt;
   transition: all 0.5s;
+  color: black;
 }
 
 .fa:hover{
