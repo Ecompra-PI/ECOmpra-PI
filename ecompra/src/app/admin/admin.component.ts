@@ -16,12 +16,14 @@ import { ProdutoService } from '../service/produto.service';
 export class AdminComponent implements OnInit {
 
   produto: Produto = new Produto
+  
   listProdutos: Produto[]
 
   categoria: Categoria = new Categoria
   listaCategoria: Categoria[]
 
   promo: string
+  promoExibe: string
   promoFinal: boolean
   idCat: number
   categoriaProduto: Categoria
@@ -76,16 +78,10 @@ export class AdminComponent implements OnInit {
   findAllProdutos(){
     this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
       this.listProdutos = resp
-
-      console.log(this.listProdutos)
-      console.log(resp)
     })
   }
 
-  cadastrarProduto(){
-
-    console.log(this.produto.foto)
-    
+  cadastrarProduto(){    
     this.categoriaProduto.codigo = this.idCat
     
     this.produto.categoria = this.categoriaProduto

@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ContatoComponent } from './contato/contato.component';
+import { EditarDeletarProdutoComponent } from './editar-deletar/editar-deletar-produto/editar-deletar-produto.component';
 import { EditarDeletarComponent } from './editar-deletar/editar-deletar/editar-deletar.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path: 'inicio-pos-login', component: InicioPosLoginComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'editar-deletar/:codigo', component: EditarDeletarComponent},
-  {path: 'pagina-produtos', component: PaginaProdutosComponent}
+  {path: 'pagina-produtos', component: PaginaProdutosComponent},
+  {path: 'editar-deletar-produto/:codigo', component: EditarDeletarProdutoComponent}
 ];
 
 @NgModule({
