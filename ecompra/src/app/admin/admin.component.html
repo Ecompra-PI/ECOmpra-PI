@@ -1,4 +1,5 @@
 <div class="container-fluid">
+
     <!-- forms -->
     <div class="row d-flex justify-content-center">
 
@@ -92,6 +93,14 @@
                                     </select>
                                 </div>
 
+                                <div class="mb-3">
+
+                                    <label for="foto" class="form-label">Link da Foto</label>
+                                    <input [(ngModel)]="produto.foto" type="text" class="form-control" id="foto">
+
+
+                                </div>
+
                                 <div class="d-flex justify-content-end">
                                     <button type="submit" class="btn btn-success"
                                         (click)="cadastrarProduto()">Submit</button>
@@ -103,18 +112,22 @@
 
                     </div>
 
+
+
+
+
+
+
+
                 </div>
-
-
             </div>
-
-
 
             <p class="text-center ">
                 <a class="btn btn-success mr-2" data-toggle="collapse" href="#usuarioCadastro" role="button"
                     aria-expanded="false" aria-controls="usuarioCadastro">Cadastrar usuario</a>
 
             </p>
+
             <div class="row d-flex justify-content-center pb-4">
                 <div class="col-md-6">
                     <div class="collapse multi-collapse" id="usuarioCadastro">
@@ -127,9 +140,7 @@
                 </div>
             </div>
 
-
         </div>
-
     </div>
     <!-- /forms -->
 
@@ -173,7 +184,8 @@
                                     <td>{{cat.setor}}</td>
                                     <td>
                                         <button class="btn btn-outline-info"
-                                            [routerLink]="['/editar-deletar', cat.codigo]"> MODIFICAÇÕES </button>
+                                            [routerLink]="['/editar-deletar', cat.codigo]"> MODIFICAÇÕES
+                                        </button>
                                     </td>
                                 </tr>
                         </table>
@@ -208,6 +220,7 @@
                                     <th scope="col">Descrição</th>
                                     <th scope="col">Estoque</th>
                                     <th scope="col">Categoria</th>
+                                    <th scope="col">Foto</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -215,18 +228,23 @@
                             <tbody>
 
                                 <tr *ngFor="let prod of listProdutos">
-                                    <th>{{prod.codigo}}</th>
-                                    <th>{{prod.nome}}</th>
-                                    <th>{{prod.descricao}}</th>
-                                    <th>{{prod.preco}}</th>
-                                    <th>{{prod.promocao}}</th>
-                                    <th>{{prod.quantidade}}</th>
-                                    <th>
-                                        <button class="btn btn-outline-info"
-                                            [routerLink]="['/editar-deletar', cat.codigo]"> MODIFICAÇÕES </button>
-                                    </th>
-                                </tr>
 
+                                    <th>{{prod.codigo}}</th>
+                                    <td>{{prod.nome}}</td>
+                                    <td>{{prod.preco}}</td>
+                                    <td>{{prod.descricao}}</td>
+                                    <td>{{prod.quantidade}}</td>
+                                    <td>{{prod.categoria.nome}}</td>
+                                    <td>{{prod.foto}}</td>
+
+
+                                    <td>
+                                        <button class="btn btn-outline-info"
+                                            [routerLink]="['/editar-deletar', prod.codigo]"> MODIFICAÇÕES
+                                        </button>
+                                    </td>
+
+                                </tr>
                             </tbody>
 
                         </table>

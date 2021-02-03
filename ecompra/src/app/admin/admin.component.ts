@@ -35,7 +35,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     environment.paginaAtual = "admin"
-    
+
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }
@@ -76,15 +76,21 @@ export class AdminComponent implements OnInit {
   findAllProdutos(){
     this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
       this.listProdutos = resp
+
+      console.log(this.listProdutos)
+      console.log(resp)
     })
   }
 
   cadastrarProduto(){
+
+    console.log(this.produto.foto)
+    
     this.categoriaProduto.codigo = this.idCat
     
     this.produto.categoria = this.categoriaProduto
     this.produto.promocao = this.promoFinal
-
+    
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
       alert("Produto cadastrado com sucesso!")

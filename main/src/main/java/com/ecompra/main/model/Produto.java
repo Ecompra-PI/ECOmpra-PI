@@ -36,6 +36,8 @@ public class Produto {
 	@NotNull
 	private boolean promocao;
 	
+	private String foto;
+	
 	//Relacionamento entre tabelas
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
@@ -96,5 +98,15 @@ public class Produto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	
+	
 	
 }
