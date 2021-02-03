@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.component';
 import { MenuComponent } from './menu/menu.component';
 import { PaginaProdutosComponent } from './pagina-produtos/pagina-produtos.component';
+import { SacolaCompraComponent } from './sacola-compra/sacola-compra.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
 
 const routes: Routes = [
@@ -32,7 +33,11 @@ const routes: Routes = [
   {path: 'editar-deletar/:codigo', component: EditarDeletarComponent},
   {path: 'pagina-produtos', component: PaginaProdutosComponent},
   {path: 'editar-deletar-produto/:codigo', component: EditarDeletarProdutoComponent},
-  {path: 'apoiadores-parceiros', component: ApoiadoresParceirosComponent}
+
+  {path: 'apoiadores-parceiros', component: ApoiadoresParceirosComponent},
+
+  {path: 'sacola-comprar/:codigo', component: SacolaCompraComponent}
+
 ];
 
 @NgModule({
