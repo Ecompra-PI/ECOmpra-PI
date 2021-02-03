@@ -12,10 +12,12 @@ import { CategoriaService } from '../service/categoria.service';
 export class PaginaProdutosComponent implements OnInit {
 
   listaProdutos: Produto[]
-  
+  listaCatProd: Produto[]
+
   idCat: number
 
   listaCategorias: Categoria[]
+  categoria: Categoria
 
   constructor(
     private produtosService: ProdutoService,
@@ -39,6 +41,12 @@ export class PaginaProdutosComponent implements OnInit {
     })
   }
 
-
+  findByIdCategoria(id:number){
+    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
+      this.categoria = resp
+      this.listaCatProd = this.categoria.produto
+      console.log(this.listaCatProd)
+    })
+  }
 
 }

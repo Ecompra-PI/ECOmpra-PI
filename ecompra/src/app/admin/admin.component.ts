@@ -57,7 +57,7 @@ export class AdminComponent implements OnInit {
   }
 
   findByIdCategoria(){
-    this.categriaService.getById(this.idCat).subscribe((resp: Categoria) => {
+    this.categriaService.getByIdCategoria(this.idCat).subscribe((resp: Categoria) => {
       this.categoriaProduto = resp
     })
   }
