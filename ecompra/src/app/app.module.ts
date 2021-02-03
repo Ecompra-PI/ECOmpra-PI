@@ -17,7 +17,10 @@ import { AdminComponent } from './admin/admin.component';
 import { EditarDeletarComponent } from './editar-deletar/editar-deletar/editar-deletar.component';
 import { PaginaProdutosComponent } from './pagina-produtos/pagina-produtos.component';
 import { EditarDeletarProdutoComponent } from './editar-deletar/editar-deletar-produto/editar-deletar-produto.component';
+
+import { ApoiadoresParceirosComponent } from './apoiadores-parceiros/apoiadores-parceiros.component';
 import { SacolaCompraComponent } from './sacola-compra/sacola-compra.component';
+
 
 
 @NgModule({
@@ -35,7 +38,11 @@ import { SacolaCompraComponent } from './sacola-compra/sacola-compra.component';
     EditarDeletarComponent,
     PaginaProdutosComponent,
     EditarDeletarProdutoComponent,
+
+    ApoiadoresParceirosComponent,
+
     SacolaCompraComponent
+
   ],
   imports: [
     BrowserModule,
