@@ -4,3 +4,8 @@
     --degradep: rgb(197, 197, 197);
     --degrades: #fff;
 }
+
+.img-logo{
+    width: 290px;
+    height: 88px;
+}
