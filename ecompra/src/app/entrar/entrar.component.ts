@@ -26,7 +26,7 @@ export class EntrarComponent implements OnInit {
   }
 
   entrar() {
-    environment.paginaAtual = ''
+    
     
     this.authService.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
     this.usuarioLogin = resp
@@ -35,18 +35,22 @@ export class EntrarComponent implements OnInit {
       environment.nome = this.usuarioLogin.nome
       environment.token = this.usuarioLogin.token
       environment.tipoUsuario = this.usuarioLogin.tipoUsuario
+
       console.log(environment.nome)
-      console.log(environment.token)
       if(environment.tipoUsuario == 'administrador'){
         this.router.navigate(['/admin'])
+        environment.paginaAtual = ''
       }else{
         this.router.navigate(['/home'])
+        environment.paginaAtual = ''
       }
       
     }, retornoErro => {
       if (retornoErro.status == 500) {
         alert('Usuário ou senha inválidos!')
       }
+
+
     })
   }
 }
