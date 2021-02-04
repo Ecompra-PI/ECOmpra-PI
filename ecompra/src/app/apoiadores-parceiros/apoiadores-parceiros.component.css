@@ -13,6 +13,8 @@
     font-size: 35pt;
     transition: all 0.5s;
     color: black;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   
   .fa:hover{
@@ -25,4 +27,8 @@
   
   .fa-github:hover{
     color: grey;
+  }
+
+  .teste{
+    margin-bottom: 35px;
   }
