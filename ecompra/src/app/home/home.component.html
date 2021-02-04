@@ -44,17 +44,17 @@
   <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
 
-    <div *ngIf='listPromo.length > 3' class="row">
+    <div class="row">
       <div class="col-md-12 d-fluid justify-content-center">
         <!--controles-->
         <div class="controls-top d-flex justify-content-around align-items-center">
-          <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-arrow-circle-left "
+          <a *ngIf='listPromo.length > 3' class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-arrow-circle-left "
               aria-hidden="true"></i></a>
           <div class="novidades mt-5 d-flex align-items-center">
             <p>PRODUTOS</p>
           </div>
 
-          <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-arrow-circle-right"
+          <a *ngIf='listPromo.length > 3' class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-arrow-circle-right"
               aria-hidden="true"></i></a>
         </div>
         <!--/controles-->
