@@ -5,5 +5,6 @@ export const environment = {
   token: '',
   imglogo: 'https://i.imgur.com/uZ8c8KZ.png',
   tipoUsuario: '',
-  paginaAtual: ''
+  paginaAtual: '',
+  promo: false
 };

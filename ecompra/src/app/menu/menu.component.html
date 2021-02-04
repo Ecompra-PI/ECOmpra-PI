@@ -15,23 +15,29 @@
         <button class="btn btn-outline-success ml-3 " type="submit">Pesquisar</button>
       </form>
 
-      <div class="col-md-3 d-flex justify-content-end pr-3">
+      <div class="col-md-3 d-flex justify-content-end pr-3 align-items-center">
 
 
         <!-- entrar e sacola de compras -->
+
         <div>
+          <button class="btn btn-outline-success" routerLink='/entrar'
+            *ngIf='authService.logado() == false'>Entrar</button>
 
-          <img class="bag" src="../../assets/img/menu/sacola.png" alt="">
-          <button class="btn btn-outline-success" routerLink='/entrar' *ngIf = 'authService.logado() == false'>Entrar</button>
-          
-          <div *ngIf = 'authService.logado() == true'>
-            <p> Bem vinde, {{nomeUsuario}}.</p>
-            <p class='text-align-end'> <a (click)='sair()' routerLink='/home'> Sair </a></p>
+          <div *ngIf='authService.logado() == true' class="d-flex justify-content-end">
+            
+            <div class="row d-flex align-items-center">
+              <div class="col pt-3 d-flex align-items-center">
+                <p> Bem vinde, {{nomeUsuario}}.</p>
+                <img class="bag" src="../../assets/img/menu/sacola.png" alt="">
+                <a (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+              </div>
+            </div>                                          
+
           </div>
-
         </div>
+        <!-- fim de entrar e sacola de compras -->
       </div>
-      <!-- fim de entrar e sacola de compras -->
     </div>
   </div>
 </nav>
@@ -48,7 +54,8 @@
         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" routerLink='/home' role="tab"
           aria-controls="nav-home" aria-selected="false">Home</a>
 
-          <a class="nav-item nav-link" id="nav-produtos-tab" data-toggle="tab" routerLink='/pagina-produtos' role="tab" aria-controls="nav-produtos" aria-selected="false">Produtos</a>
+        <a class="nav-item nav-link" id="nav-produtos-tab" data-toggle="tab" routerLink='/pagina-produtos' role="tab"
+          aria-controls="nav-produtos" aria-selected="false">Produtos</a>
 
         <a class="nav-item nav-link " id="nav-profile-tab" data-toggle="tab" routerLink='/sobrenos' role="tab"
           aria-controls="nav-profile" aria-selected="false">Quem Somos</a>
@@ -56,8 +63,8 @@
         <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" routerLink='/contato' role="tab"
           aria-controls="nav-contact" aria-selected="false">Contato</a>
 
-        <a *ngIf = 'administrador() == true' class="nav-item nav-link" id="nav-admin-tab" data-toggle="tab" routerLink='/admin' role="tab"
-          aria-controls="nav-admin" aria-selected="false">Administrador</a>
+        <a *ngIf='administrador() == true' class="nav-item nav-link" id="nav-admin-tab" data-toggle="tab"
+          routerLink='/admin' role="tab" aria-controls="nav-admin" aria-selected="false">Administrador</a>
 
       </div>
     </nav>
