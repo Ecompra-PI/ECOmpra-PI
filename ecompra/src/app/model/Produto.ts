@@ -10,3 +10,4 @@ export class Produto{
     public categoria: Categoria
     public foto: string
 }
+ 

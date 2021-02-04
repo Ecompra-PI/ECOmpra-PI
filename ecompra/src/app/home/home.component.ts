@@ -10,8 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   listPromo: Produto[]
-  i: number
-  
+  produto: Produto
+
+  idProduto: number
+  nomeProduto: string
+  descricaoProduto: string
+  precoProduto: number
+  quantidadeProduto: number
+  promocaoProduto: boolean
+  categoriaProduto: string
+  fotoProduto: string 
 
   constructor(
     private produtoService: ProdutoService
@@ -24,7 +32,22 @@ export class HomeComponent implements OnInit {
   promo(){
     this.produtoService.getProdutoPromocao().subscribe((resp : Produto[])=>{
       this.listPromo = resp
-      this.i = this.listPromo.length
+    })
+  }
+
+  getProdutoById(id: number){
+    return this.produtoService.getProdutoById(id).subscribe((resp: Produto) => {
+      this.produto = resp
+
+      this.idProduto = this.produto.codigo
+      this.nomeProduto = this.produto.nome
+      this.descricaoProduto = this.produto.descricao
+      this.precoProduto = this.produto.preco
+      this.quantidadeProduto = this.produto.quantidade
+      this.promocaoProduto = this.produto.promocao
+      this.categoriaProduto = this.produto.categoria.descricao
+      this.fotoProduto = this.produto.foto
+
     })
   }
 
