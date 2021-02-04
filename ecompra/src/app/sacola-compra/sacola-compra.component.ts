@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
+import { AlertsService } from '../service/alerts.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -24,14 +25,15 @@ export class SacolaCompraComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private alertas: AlertsService
 
   ) { }
 
   ngOnInit(){
     window.scroll(0,0)
     if(environment.token == ''){
-      alert('Você precisa estar logado para acessar essa página!')
+      this.alertas.showAlertInfo('Você precisa estar logado para acessar essa página!')
       this.router.navigate(["/entrar"])
     }
     environment.paginaAtual = this.pagina
@@ -55,7 +57,7 @@ export class SacolaCompraComponent implements OnInit {
 
   retirar(){
     if(this.quantidade == 1){
-      alert('Não é possível zerar o carrinho!')
+      this.alertas.showAlertDanger('Não é possível zerar o carrinho!')
     }else{
       this.quantidade -= 1
     }
@@ -78,15 +80,15 @@ export class SacolaCompraComponent implements OnInit {
   finalizarVenda(){
 
     if(this.validaPagamento == "cartao"){
-      alert("Dados enviados para processamento! Em breve você reberá um email ;)")
+      this.alertas.showAlertInfo("Dados enviados para processamento! Em breve você reberá um email ;)")
       this.router.navigate(['/home'])
       environment.paginaAtual = ''
     }else if(this.validaPagamento == "boleto"){
-      alert("Em breve você reberá o boleto no seu um email!")
+      this.alertas.showAlertInfo("Em breve você reberá o boleto no seu um email!")
       this.router.navigate(['/home'])
       environment.paginaAtual = ''
     }else{
-      alert("Selecione uma opção de pagamento!")
+      this.alertas.showAlertDanger("Selecione uma opção de pagamento!")
     }
 
   }

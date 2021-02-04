@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AlertsService } from '../service/alerts.service';
 import { AuthService } from '../service/auth.service';
 import { environment } from './../../environments/environment.prod';
 
@@ -17,7 +18,8 @@ export class EntrarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas : AlertsService
   ) { }
 
   ngOnInit() {
@@ -46,7 +48,7 @@ export class EntrarComponent implements OnInit {
       
     }, retornoErro => {
       if (retornoErro.status == 500) {
-        alert('Usuário ou senha inválidos!')
+        this.alertas.showAlertDanger('Usuário ou senha inválidos!')
       }
 
 

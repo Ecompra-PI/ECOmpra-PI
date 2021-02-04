@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
+import { AlertsService } from '../service/alerts.service';
 import { AuthService } from '../service/auth.service';
 
 
@@ -23,7 +24,8 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas : AlertsService
   ) { }
 
   ngOnInit() {
@@ -62,28 +64,28 @@ export class CadastrarComponent implements OnInit {
     this.usuario.usuario = this.usuarioFormulario //OK
 
     if(this.usuario.senha != this.confirmandoSenha){
-      alert('As senhas não conferem!')
+      this.alertas.showAlertDanger('As senhas não conferem!')
     }else if(this.usuario.senha.length <= 5){
-      alert('Sua senha deve ter mais que 5 caracteres!')
+      this.alertas.showAlertDanger('Sua senha deve ter mais que 5 caracteres!')
     }
     else if(this.usuario.nome.length <= 2){
-      alert('Insira um nome maior que 2 caracteres')
+      this.alertas.showAlertDanger('Insira um nome maior que 2 caracteres')
     }else if(this.usuario.usuario.length <= 4){
-      alert('Insira um usuário maior que 4 caracteres')
+      this.alertas.showAlertDanger('Insira um usuário maior que 4 caracteres')
     }else if(this.usuario.tipoUsuario === null || this.usuario.tipoUsuario === undefined){
-      alert('Escolha um tipo de usuário!')
+      this.alertas.showAlertDanger('Escolha um tipo de usuário!')
     }else{
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
 
         
         if(environment.paginaAtual == "admin"){
-          alert('Cadastro realizado com sucesso!')
+          this.alertas.showAlertSuccess('Cadastro realizado com sucesso!')
           this.usuario = new Usuario()
           this.confirmandoSenha = ''
         }else{
         this.router.navigate(['/entrar'])
-        alert('Cadastro realizado com sucesso!')
+        this.alertas.showAlertSuccess('Cadastro realizado com sucesso!')
         }
         
         environment.paginaAtual = ''

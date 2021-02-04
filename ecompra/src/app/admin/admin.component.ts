@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 import { ProdutoService } from '../service/produto.service';
+import { AlertsService } from '../service/alerts.service';
 
 
 @Component({
@@ -31,7 +32,8 @@ export class AdminComponent implements OnInit {
   constructor (
     private router: Router,
     private categriaService: CategoriaService,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private alertas : AlertsService
 
   ) {}
 
@@ -69,7 +71,7 @@ export class AdminComponent implements OnInit {
   cadastrar(){
     this.categriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=> {
       this.categoria = resp 
-      alert('Categoria Cadastrada com sucesso!')
+      this.alertas.showAlertSuccess('Categoria Cadastrada com sucesso!')
       this.findAllCadastrar()
       this.categoria = new Categoria()
     })
@@ -89,7 +91,7 @@ export class AdminComponent implements OnInit {
     
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
-      alert("Produto cadastrado com sucesso!")
+      this.alertas.showAlertSuccess("Produto cadastrado com sucesso!")
       this.findAllProdutos()
       this.produto = new Produto()
 
