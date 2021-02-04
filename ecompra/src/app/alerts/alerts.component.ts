@@ -11,13 +11,8 @@ export class AlertsComponent implements OnInit {
   
   @Input() message: string
 
-  @Input() tipo: string 
+  @Input() type: string ='success'
 
-
-
-
-  
-  
     constructor(
       public modal: BsModalRef
     ) { }
