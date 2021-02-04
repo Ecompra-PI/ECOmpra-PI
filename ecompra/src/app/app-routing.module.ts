@@ -11,7 +11,6 @@ import { EditarDeletarComponent } from './editar-deletar/editar-deletar/editar-d
 import { EntrarComponent } from './entrar/entrar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.component';
 import { MenuComponent } from './menu/menu.component';
 import { PaginaProdutosComponent } from './pagina-produtos/pagina-produtos.component';
 import { SacolaCompraComponent } from './sacola-compra/sacola-compra.component';
@@ -28,7 +27,6 @@ const routes: Routes = [
   {path: 'footer', component: FooterComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'sobrenos', component: SobrenosComponent},
-  {path: 'inicio-pos-login', component: InicioPosLoginComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'editar-deletar/:codigo', component: EditarDeletarComponent},
   {path: 'pagina-produtos', component: PaginaProdutosComponent},

@@ -12,7 +12,6 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditarDeletarComponent } from './editar-deletar/editar-deletar/editar-deletar.component';
 import { PaginaProdutosComponent } from './pagina-produtos/pagina-produtos.component';
@@ -35,7 +34,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ContatoComponent,
     EntrarComponent,
     CadastrarComponent,
-    InicioPosLoginComponent,
     AdminComponent,
     EditarDeletarComponent,
     PaginaProdutosComponent,

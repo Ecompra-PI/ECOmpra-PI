@@ -53,8 +53,8 @@
 <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
 
-  <div class="row">
-    <div class="col-md-12 d-fluid justify-content-center">
+  <div *ngIf='listPromo.length > 3' class="row">
+    <div  class="col-md-12 d-fluid justify-content-center">
       <!--controles-->
       <div class="controls-top d-flex justify-content-around align-items-center">
         <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-arrow-circle-left "
@@ -73,42 +73,20 @@
   <div class="carousel-inner" role="listbox">
 
     <!--primeiro slide-->
-    <div class="carousel-item active">
+    <div *ngIf='listPromo.length > 0' class="carousel-item active">
       <div class="container-fluid justify-content-center">
         <div class="row d-flex justify-content-around">
 
-          <div class="card shadow-lg rounded">
-            <div class="card-img-wrapper">
-              <img src="../../assets/img/cards/WhatsApp Image 2021-01-21 at 16.09.34.jpeg" alt="">
-            </div>
-            <div class="card-info">
-              <h2>Copos De silicone</h2>
-              <h3>Itens de cozinha</h3>
-              <p>Copos feitos de silicone para evitar o desperdicio de plastico dos copos descartáveis</p>
-              <button class="btn">Saiba mais</button>
-            </div>
-          </div>
-
-          <div class="card shadow-lg">
-            <div class="card-img-wrapper">
-              <img src="../../assets/img/cards/WhatsApp Image 2021-01-21 at 16.09.35.jpeg" alt="">
-            </div>
-            <div class="card-info">
-              <h2>Escova de bambu</h2>
-              <h3>Higiene pessoal</h3>
-              <p>Escovas de bambu para que o descarte não afete o meio ambiente</p>
-              <button class="btn">Saiba mais</button>
-            </div>
-          </div>
-
-          <div class="card shadow-lg">
-            <div class="card-img-wrapper">
-              <img src="../../assets/img/cards/camiseta.jpg" alt="">
-            </div>
-            <div class="card-info">
-              <h3>Vestimenta</h3>
-              <p>Roupas feitas com material pet para economizar agua na produção e usar menos algodão.</p>
-              <button class="btn">Saiba mais</button>
+          <div class="col-md-4 d-flex justify-content-center" style="float:left" *ngFor='let i of listPromo | slice:0:3' >
+            <div class="card shadow-lg">
+              <div class="card-img-wrapper">
+                <img src="{{i.foto}}" alt="">
+              </div>
+              <div class="card-info">
+                <h3>{{i.nome}}</h3>
+                <p>{{i.descricao}}</p>
+                <button class="btn">Saiba Mais</button>
+              </div>
             </div>
           </div>
 
@@ -116,147 +94,57 @@
       </div>
     </div>
     <!--/primeiro slide-->
+    <!-- Segundo Slide -->
+    <div *ngIf='listPromo.length > 3' class="carousel-item">
+      <div class="container-fluid justify-content-center">
+        <div class="row d-flex justify-content-around">
 
-     <!--segundo slide-->
-     <div class="carousel-item">
+          <div class="col-md-4 d-flex justify-content-center" style="float:left" *ngFor='let i of listPromo | slice:3:6' >
+            <div class="card shadow-lg">
+              <div class="card-img-wrapper">
+                <img src="{{i.foto}}" alt="">
+              </div>
+              <div class="card-info">
+                <h3>{{i.nome}}</h3>
+                <p>{{i.descricao}}</p>
+                <button class="btn">Saiba Mais</button>
+              </div>
+            </div>
+          </div>
 
-      <div class="col-md-4 d-flex justify-content-center" style="float:left">
-        <div class="card shadow-lg">
-          <div class="card-img-wrapper">
-            <img src="../../assets/img/cards/WhatsApp Image 2021-01-21 at 16.09.35.jpeg" alt="">
-          </div>
-          <div class="card-info">
-            <h3>Higiene pessoal</h3>
-            <p>Itens que são feitos com produtos ecológicos, e não são testados em nossos queridos amigguinhos animais para que eles não sofram.</p>
-            <button class="btn">Saiba mais</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 d-flex justify-content-center" style="float:left">
-        <div class="card shadow-lg">
-          <div class="card-img-wrapper">
-            <img src="../../assets/img/cards/shampoo-vegano-.jpg" alt="">
-          </div>
-          <div class="card-info">
-            <h3>Cosméticos</h3>
-            <p>Produtos com ingredientes naturais produzidos com matérias-primas renováveis.</p>
-            <button class="btn">Saiba mais</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 d-flex justify-content-center" style="float:left">
-        <div class="card shadow-lg">
-          <div class="card-img-wrapper">
-            <img src="../../assets/img/cards/lava_roupas_liquido_vegano_799_1_20201103170815.jpg" alt="">
-          </div>
-          <div class="card-info">
-            <h3>Limpeza</h3>
-            <p>Produtos naturais e Biodegradáveis para toda sua casa.</p>
-            <button class="btn">Saiba Mais</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!--/segundo slide-->
-    <!-- Terceiro slide -->
-    <div class="carousel-item">
-
-      <div class="col-md-4 d-flex justify-content-center" style="float:left">
-        <div class="card shadow-lg">
-          <div class="card-img-wrapper">
-            <img src="https://i.imgur.com/AvvnaiM.jpg" alt="">
-          </div>
-          <div class="card-info">
-            <h3>Vestimenta</h3>
-            <p>Roupas feitas com material pet para economizar agua na produção e usar menos algodão.</p>
-            <button class="btn">Saiba mais</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 d-flex justify-content-center" style="float:left">
-        <div class="card shadow-lg">
-          <div class="card-img-wrapper">
-            <img src="https://i.imgur.com/Bl5AdIA.jpg" alt="">
-          </div>
-          <div class="card-info">
-            <h3>Alimentação</h3>
-            <p>Alimentos que são gostosos e nos mostra que podemos ter uma alimentação saudavel gostosa e que ainda prejudica menos nosso querido planeta</p>
-            <button class="btn">Saiba Mais</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex justify-content-center" style="float:left">
-      <div class="card shadow-lg rounded">
-        <div class="card-img-wrapper">
-          <img src="../../assets/img/cards/WhatsApp Image 2021-01-21 at 16.09.34.jpeg" alt="">
-        </div>
-        <div class="card-info">
-          <h3>Itens de cozinha</h3>
-          <p>itens de cozinha tematicos para que possamos normalizar os objetos fixos em vez dde itens descartáveis que tanto nos prejudica e suja nossa querida casinha.</p>
-          <button class="btn">Saiba mais</button>
         </div>
       </div>
     </div>
+    <!-- /Segundo Slide -->
+    <!-- Terceiro Slide -->
+    <div *ngIf='listPromo.length > 6' class="carousel-item">
+      <div class="container-fluid justify-content-center">
+        <div class="row d-flex justify-content-around">
 
-  </div>
-  <!-- Terceiro slide -->
-  <!-- Quarto slide -->
-  <div class="carousel-item">
+          <div class="col-md-4 d-flex justify-content-center" style="float:left" *ngFor='let i of listPromo | slice:6:9' >
+            <div class="card shadow-lg">
+              <div class="card-img-wrapper">
+                <img src="{{i.foto}}" alt="">
+              </div>
+              <div class="card-info">
+                <h3>{{i.nome}}</h3>
+                <p>{{i.descricao}}</p>
+                <button class="btn">Saiba Mais</button>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-md-4 d-flex justify-content-center" style="float:left">
-      <div class="card shadow-lg">
-        <div class="card-img-wrapper">
-          <img src="https://i.imgur.com/Bl5AdIA.jpg" alt="">
         </div>
-        <div class="card-info">
-          <h3>Alimentação</h3>
-          <p>Alimentos que são gostosos e nos mostra que podemos ter uma alimentação saudavel gostosa e que ainda prejudica menos nosso querido planeta</p>
-          <button class="btn">Saiba Mais</button>
-        </div>
       </div>
     </div>
-    <div class="col-md-4 d-flex justify-content-center" style="float:left">
-    <div class="card shadow-lg rounded">
-      <div class="card-img-wrapper">
-        <img src="../../assets/img/cards/WhatsApp Image 2021-01-21 at 16.09.34.jpeg" alt="">
-      </div>
-      <div class="card-info">
-        <h3>Itens de cozinha</h3>
-        <p>itens de cozinha tematicos para que possamos normalizar os objetos fixos em vez dde itens descartáveis que tanto nos prejudica e suja nossa querida casinha.</p>
-        <button class="btn">Saiba mais</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4 d-flex justify-content-center" style="float:left">
-    <div class="card shadow-lg">
-      <div class="card-img-wrapper">
-        <img src="../../assets/img/cards/WhatsApp Image 2021-01-21 at 16.09.35.jpeg" alt="">
-      </div>
-      <div class="card-info">
-        <h3>Higiene pessoal</h3>
-        <p>Itens que são feitos com produtos ecológicos, e não são testados em nossos queridos amigguinhos animais para que eles não sofram.</p>
-        <button class="btn">Saiba mais</button>
-      </div>
-    </div>
-  </div>
-
-</div>
-  <!-- /Quarto slide -->
-
-
-
+    <!-- Terceiro Slide -->
 
   </div>
   <!--/slides-->
 </div>
 
 <!--ECOBOX-->
-<div class="novidades mt-5">
+<div class="novidades mt-5" id="ecobox">
   <p>ECOBOX</p>
 </div>
 <!-- <hr class="container espacamentoCarrosselCards"> -->

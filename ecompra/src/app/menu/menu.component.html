@@ -15,28 +15,29 @@
         <button class="btn btn-outline-success ml-1" type="submit">Pesquisar</button>
       </form>
 
-      <div class="col-md-3 d-flex justify-content-end pr-3">
+      <div class="col-md-3 d-flex justify-content-end pr-3 align-items-center">
 
 
         <!-- entrar e sacola de compras -->
 
+        <div>
+          <button class="btn btn-outline-success" routerLink='/entrar'
+            *ngIf='authService.logado() == false'>Entrar</button>
 
-        <img *ngIf="authService.logado() == true" class="bag text-center" src="../../assets/img/menu/sacola.png" alt="">
+          <div *ngIf='authService.logado() == true' class="d-flex justify-content-end">
+            
+            <div class="row d-flex align-items-center">
+              <div class="col pt-3 d-flex align-items-center">
+                <p> Bem vinde, {{nomeUsuario}}.</p>
+                <img class="bag" src="../../assets/img/menu/sacola.png" alt="">
+                <a (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+              </div>
+            </div>                                          
 
-        <button id="entrar" class="btn btn-outline-success" routerLink='/entrar'
-          *ngIf='authService.logado() == false'>Entrar</button>
-
-        <div *ngIf="authService.logado() == true">
-          <p> Bem vinde, {{nomeUsuario}}.</p>
-          <p class='text-align-end'> <a (click)='sair()' routerLink='/home'> Sair </a></p>
+          </div>
         </div>
-
-
+        <!-- fim de entrar e sacola de compras -->
       </div>
-     
-
-
-
     </div>
 
 
