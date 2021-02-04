@@ -19,6 +19,8 @@ import { EditarDeletarProdutoComponent } from './editar-deletar/editar-deletar-p
 
 import { ApoiadoresParceirosComponent } from './apoiadores-parceiros/apoiadores-parceiros.component';
 import { SacolaCompraComponent } from './sacola-compra/sacola-compra.component';
+import { AlertsComponent } from './alerts/alerts.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -39,14 +41,17 @@ import { SacolaCompraComponent } from './sacola-compra/sacola-compra.component';
 
     ApoiadoresParceirosComponent,
 
-    SacolaCompraComponent
+    SacolaCompraComponent,
+
+    AlertsComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

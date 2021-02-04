@@ -30,7 +30,7 @@ export class CadastrarComponent implements OnInit {
     window.scroll(0,0)
 
     if(environment.paginaAtual != "admin"){
-      environment.paginaAtual == 'cadastro'
+      environment.paginaAtual = 'cadastro'
     } 
 
   }

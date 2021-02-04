@@ -1,1 +1,100 @@
-<p>sacola-compra works!</p>
+
+<div class="container">
+    <div class="pt-5 row d-flex justify-content-center align-items-center">
+
+        <div class="col-md-4">
+            <a type="button" (click) = "voltar()"><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="col-md-8">
+            <a (click) = "voltar()"><img class="img-logo" [src]="imgLogo" alt=""></a>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center align-items-center pb-4 shadow-lg p-3 mb-5 bg-white rounded">
+
+        <div class="col-md-12">
+
+            <div class="row d-flex justify-content-center ">
+
+                <div class="col-md-4 pt-4 border">
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <img class="rounded-left img-fluid shadow-lg p-3 mb-5 bg-white rounded" [src]="produto.foto"
+                                alt="Foto do(a) {{produto.descricao}}">
+                        </div>
+
+                        <div class="col-md-6">
+                            <h5 class="font-weight-bolder">{{produto.nome}}</h5>
+                            <p class="font-weight-lighte">{{produto.descricao}}</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-2 pt-4 border text-center">
+                    <h4>PREÇO</h4>
+                    <h6>R${{produto.preco}}</h6>
+                </div>
+
+                <div class="col-md-2 pt-5 border text-center">
+                    <button class="btn btn-warning" (click)="retirar()">-</button>
+                    <label class="border pl-2 pr-2">{{quantidade}}</label>
+                    <button class="btn btn-info" (click)="acrescentar()">+</button>
+                </div>
+
+                <div class="col-md-4 border-left">
+                    <h1 class="font-weight-bold">Resumo</h1>
+                    <hr>
+
+                    <div class="row-md-3 align-self-center">
+                       <h6>{{quantidade}} produto | Preço total: <b>R${{quantidade * produto.preco}}</b></h6>
+                    </div>
+
+                    <hr>
+
+                    <div class="row-md-1">
+                        <button class="btn btn-danger w-100" data-toggle="modal" data-target="#staticBackdrop">Comprar</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>

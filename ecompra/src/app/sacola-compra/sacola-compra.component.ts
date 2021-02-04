@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router} from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { Produto } from '../model/Produto';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-sacola-compra',
@@ -6,10 +10,60 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sacola-compra.component.css']
 })
 export class SacolaCompraComponent implements OnInit {
+  imgLogo = environment.imglogo
 
-  constructor() { }
+  pagina: string = 'sacola'
+  codigo: number
+  quantidade: number = 1
 
-  ngOnInit(): void {
+  produto: Produto = new Produto()
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private produtoService: ProdutoService
+
+  ) { }
+
+  ngOnInit(){
+    window.scroll(0,0)
+    // if(environment.token == ''){
+    //   alert('Você precisa estar logado para acessar essa página!')
+    //   this.router.navigate(["/entrar"])
+    // }
+    environment.paginaAtual = this.pagina
+
+    this.codigo = this.route.snapshot.params['codigo']
+
+    this.getProdutoById(this.codigo)
   }
 
+  getProdutoById(id: number){
+    this.produtoService.getProdutoById(id).subscribe((resp: Produto) => {
+      this.produto = resp
+
+    })
+  }
+
+  acrescentar(){
+    this.quantidade += 1
+  }
+
+  retirar(){
+    if(this.quantidade == 1){
+      alert('Não é possível zerar o carrinho!')
+    }else{
+      this.quantidade -= 1
+    }
+  }
+
+  voltar(){
+    this.router.navigate(["/pagina-produtos"])
+    environment.paginaAtual = ''
+  }
+
+  comprar(){
+    this.router.navigate(["/home"])
+
+  }
 }
