@@ -1,3 +1,5 @@
+import { ProdutoService } from 'src/app/service/produto.service';
+import { Produto } from 'src/app/model/Produto';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,12 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  listPromo: Produto[]
+  i: number
+  
 
-  ngOnInit(): void {
+  constructor(
+    private produtoService: ProdutoService
+  ) { }
+
+  ngOnInit(){
+    this.promo()
+  }
+
+  promo(){
+    this.produtoService.getProdutoPromocao().subscribe((resp : Produto[])=>{
+      this.listPromo = resp
+      this.i = this.listPromo.length
+    })
   }
 
 }
-
-
-

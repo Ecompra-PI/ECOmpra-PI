@@ -12,7 +12,6 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditarDeletarComponent } from './editar-deletar/editar-deletar/editar-deletar.component';
 import { PaginaProdutosComponent } from './pagina-produtos/pagina-produtos.component';
@@ -20,6 +19,8 @@ import { EditarDeletarProdutoComponent } from './editar-deletar/editar-deletar-p
 
 import { ApoiadoresParceirosComponent } from './apoiadores-parceiros/apoiadores-parceiros.component';
 import { SacolaCompraComponent } from './sacola-compra/sacola-compra.component';
+import { AlertsComponent } from './alerts/alerts.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -33,7 +34,6 @@ import { SacolaCompraComponent } from './sacola-compra/sacola-compra.component';
     ContatoComponent,
     EntrarComponent,
     CadastrarComponent,
-    InicioPosLoginComponent,
     AdminComponent,
     EditarDeletarComponent,
     PaginaProdutosComponent,
@@ -41,14 +41,17 @@ import { SacolaCompraComponent } from './sacola-compra/sacola-compra.component';
 
     ApoiadoresParceirosComponent,
 
-    SacolaCompraComponent
+    SacolaCompraComponent,
+
+    AlertsComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
