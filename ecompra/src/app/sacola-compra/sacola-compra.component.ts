@@ -10,6 +10,7 @@ import { ProdutoService } from '../service/produto.service';
   styleUrls: ['./sacola-compra.component.css']
 })
 export class SacolaCompraComponent implements OnInit {
+  
   imgLogo = environment.imglogo
 
   pagina: string = 'sacola'
@@ -17,6 +18,8 @@ export class SacolaCompraComponent implements OnInit {
   quantidade: number = 1
 
   produto: Produto = new Produto()
+  validaPagamento: string
+
 
   constructor(
     private router: Router,
@@ -27,15 +30,16 @@ export class SacolaCompraComponent implements OnInit {
 
   ngOnInit(){
     window.scroll(0,0)
-    // if(environment.token == ''){
-    //   alert('Você precisa estar logado para acessar essa página!')
-    //   this.router.navigate(["/entrar"])
-    // }
+    if(environment.token == ''){
+      alert('Você precisa estar logado para acessar essa página!')
+      this.router.navigate(["/entrar"])
+    }
     environment.paginaAtual = this.pagina
 
     this.codigo = this.route.snapshot.params['codigo']
 
     this.getProdutoById(this.codigo)
+
   }
 
   getProdutoById(id: number){
@@ -62,8 +66,29 @@ export class SacolaCompraComponent implements OnInit {
     environment.paginaAtual = ''
   }
 
+  validarPagamento(pagamento: string){
+    console.log(pagamento)
+  }
+
   comprar(){
     this.router.navigate(["/home"])
 
   }
+
+  finalizarVenda(){
+
+    if(this.validaPagamento == "cartao"){
+      alert("Dados enviados para processamento! Em breve você reberá um email ;)")
+      this.router.navigate(['/home'])
+      environment.paginaAtual = ''
+    }else if(this.validaPagamento == "boleto"){
+      alert("Em breve você reberá o boleto no seu um email!")
+      this.router.navigate(['/home'])
+      environment.paginaAtual = ''
+    }else{
+      alert("Selecione uma opção de pagamento!")
+    }
+
+  }
+
 }

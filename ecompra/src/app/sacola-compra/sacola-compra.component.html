@@ -1,13 +1,12 @@
-
 <div class="container">
     <div class="pt-5 row d-flex justify-content-center align-items-center">
 
         <div class="col-md-4">
-            <a type="button" (click) = "voltar()"><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></a>
+            <a type="button" (click)="voltar()"><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></a>
         </div>
 
         <div class="col-md-8">
-            <a (click) = "voltar()"><img class="img-logo" [src]="imgLogo" alt=""></a>
+            <a (click)="voltar()"><img class="img-logo" [src]="imgLogo" alt=""></a>
         </div>
 
     </div>
@@ -56,13 +55,18 @@
                     <hr>
 
                     <div class="row-md-3 align-self-center">
-                       <h6>{{quantidade}} produto | Preço total: <b>R${{quantidade * produto.preco}}</b></h6>
+
+                        <h6>{{quantidade}} produto(s) | Preço total: <b>R${{quantidade * produto.preco | number:
+                                '1.2'}}</b>
+                        </h6>
+
                     </div>
 
                     <hr>
 
                     <div class="row-md-1">
-                        <button class="btn btn-danger w-100" data-toggle="modal" data-target="#staticBackdrop">Comprar</button>
+                        <button class="btn btn-danger w-100" data-toggle="modal"
+                            data-target="#pagamento">Comprar</button>
 
                     </div>
 
@@ -77,24 +81,62 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="pagamento" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="pagamento" aria-hidden="true">
+
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
+        <div class="modal-content">
 
-            
+            <div class="modal-header">
+                <h5 class="modal-title">Pagamento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="formadepagamento">Forma de pagamento</label>
+                    </div>
+
+                    <select [(ngModel)]="validaPagamento" class="custom-select" id="formadepagamento"
+                        (change)="validarPagamento(validaPagamento)">
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="cartao">Cartão</option>
+                        <option value="boleto">Boleto</option>
+                    </select>
+                </div>
+
+                <div *ngIf="validaPagamento == 'boleto'" class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Digite seu email" aria-label="email"
+                        aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">@exemplo.com</span>
+                    </div>
+                </div>
+
+                <form *ngIf = "validaPagamento == 'cartao'" class="checkout">
+                    <p>
+                        <input type="text" class="p-2 m-2" placeholder="Seu nome">
+                        <input type="text" class="p-2 m-2" placeholder="Mês/vencimento">
+                        <input type="text" class="p-2 m-2" placeholder="Ano/vencimento">
+                    </p>
+                    <p>
+                        <input type="text" class="p-2 m-2" placeholder="4111 1111 1111 1111">
+                        <input type="text" class="p-2 m-2" alt="Código de segurança" placeholder="CVC">
+                    </p>
+                   
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click) = "finalizarVenda()" data-dismiss="modal">Finalizar compra</button>
+            </div>
 
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
