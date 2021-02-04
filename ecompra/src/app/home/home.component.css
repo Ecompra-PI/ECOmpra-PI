@@ -74,7 +74,7 @@
   margin-bottom: 1.5rem;
 }
 
-.btn{
+.btn-1{
   color: #eee;
   border-radius: .5rem;
   border: none;
@@ -119,5 +119,10 @@
 
 .tamCarrossel{
   right: 100px;
+  width: 300px;
+}
+
+
+.img-modal{
   width: 300px;
 }

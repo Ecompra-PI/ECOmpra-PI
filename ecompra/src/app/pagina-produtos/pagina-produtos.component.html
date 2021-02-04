@@ -16,7 +16,7 @@
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
         <div class="card-columns">
-          <div class="card shadow-lg rounded" *ngFor='let p of listaProdutos'>
+          <div class="card rounded" *ngFor='let p of listaProdutos'>
             <div class="card-img-wrapper">
               <img src="{{p.foto}}" alt="">
             </div>
@@ -33,7 +33,7 @@
       <div class="tab-pane fade" id="v-pills-categoria" role="tabpanel" aria-labelledby="v-pills-categoria-tab">
 
         <div class="card-columns">
-          <div class="card shadow-lg rounded" *ngFor='let c of listaCatProd'>
+          <div class="card rounded" *ngFor='let c of listaCatProd'>
             <div class="card-img-wrapper">
               <img src="{{c.foto}}" alt="">
             </div>
@@ -54,12 +54,15 @@
 <!-- Modal -->
 <div class="modal fade" id="saibaMais" data-backdrop="static" data-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content d-flex">
 
-      <div class="modal-header ">
+      <div class="modal-header">
         <div class="row">
-          <h5 class="modal-title text-uppercase" id="staticBackdropLabel"> {{nomeProduto}} </h5>
+          <div class="col-md-12 d-flex justify-content-center">
+            <h5 class="modal-title text-uppercase titulo" id="staticBackdropLabel">Produto</h5>
+          </div>
+          
         </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -67,17 +70,23 @@
       </div>
 
       <div class="modal-body">
+        
         <div class="row d-flex align-items-center">
-          <div class="col-md-4">
-            <img src="{{fotoProduto}}" class="imagemModalProduto">
+          <div class="col-md-6 text-center">
+            <img [src]="fotoProduto" class="imagemModalProduto img-modal">
           </div>
-          <div class="col-md-8">
-            <span class="center-block">{{descricaoProduto}}</span>
+          <div class="col-md-6">
+            <div class="row"><h3><strong>{{nomeProduto}}</strong></h3></div>
+            <div class="row"><small>{{categoriaProduto}}</small></div>
+            <hr>
+            <div class="row"><h3><strong>Descrição:</strong></h3></div>
+            <div class="row"><span class="center-block d-flex text-justify mr-3">{{descricaoProduto}}</span></div>
+            
           </div>
         </div>
-        <div class="row mt-12">
+        <div class="row">
             <div class="col-md-12 text-success d-flex justify-content-end">
-              Preço: RS {{precoProduto}} 
+              <h5><strong style="color: grey;">Preço</strong></h5> <h5><strong style="color: green;">: RS{{precoProduto}}</strong></h5> 
             </div>
         </div>
       </div>    
