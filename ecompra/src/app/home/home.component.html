@@ -12,8 +12,6 @@
         class="d-block w-100 img-fluid" alt="...">
 
       <div class="carousel-caption d-none d-md-block">
-        <!-- <h5>Raposa com lenço vermelho</h5>
-        <p>O fundo está vermelho, porém com uma tonalidade diferente</p> -->
 
       </div>
     </div>
@@ -21,15 +19,11 @@
       <img src="../../assets/img/CarrosselHome/hakjdhDLSAHFLA.jpg"
         class="d-block w-100 img-fluid" alt="...">
       <div class="carousel-caption d-none d-md-block  ">
-        <!-- <h5>Dragão colorido</h5>
-        <p>O fundo está vermelho</p> -->
       </div>
     </div>
     <div class="carousel-item">
       <img src="../../assets/img/CarrosselHome/make.jpg" class="d-block w-100 img-fluid" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <!-- <h5>Bolo de chocolate com cereja </h5>
-        <p>Esse bolo está dando água na boca</p> -->
       </div>
     </div>
   </div>
@@ -84,7 +78,7 @@
               <div class="card-info">
                 <h3>{{i.nome}}</h3>
                 <p>{{i.descricao}}</p>
-                <button class="btn" data-toggle="modal" data-target="#saibaMais" (click) = "getProdutoById(i.codigo)">Saiba Mais</button>
+                <button class="btn-1" data-toggle="modal" data-target="#saibaMais" (click) = "getProdutoById(i.codigo)">Saiba Mais</button>
               </div>
             </div>
           </div>
@@ -106,7 +100,7 @@
               <div class="card-info">
                 <h3>{{i.nome}}</h3>
                 <p>{{i.descricao}}</p>
-                <button class="btn" data-toggle="modal" data-target="#saibaMais" (click) = "getProdutoById(i.codigo)">Saiba Mais</button>
+                <button class="btn-1" data-toggle="modal" data-target="#saibaMais" (click) = "getProdutoById(i.codigo)">Saiba Mais</button>
               </div>
             </div>
           </div>
@@ -130,7 +124,7 @@
               <div class="card-info">
                 <h3>{{i.nome}}</h3>
                 <p>{{i.descricao}}</p>
-                <button class="btn" data-toggle="modal" data-target="#saibaMais" (click) = "getProdutoById(i.codigo)">Saiba Mais</button>
+                <button class="btn-1" data-toggle="modal" data-target="#saibaMais" (click) = "getProdutoById(i.codigo)">Saiba Mais</button>
               </div>
             </div>
           </div>
@@ -160,7 +154,7 @@
       <div class="card-info">
         <h2>Ecobox do Patrulheiro</h2>
         <p>Descrição</p>
-        <button class="btn">Saiba mais</button>
+        <button class="btn-1" data-toggle="modal" data-target="#patrulheiro">Saiba mais</button>
       </div>
     </div>
 
@@ -172,7 +166,7 @@
         <h2>Ecobox do Explorador</h2>
 
         <p>Descrição</p>
-        <button class="btn">Saiba mais</button>
+        <button class="btn-1" data-toggle="modal" data-target="#explorador">Saiba mais</button>
       </div>
     </div>
 
@@ -183,7 +177,7 @@
       <div class="card-info">
         <h2>Ecobox do Biólogo</h2>
         <p>Descrição</p>
-        <button class="btn btn-outline-success">Saiba mais</button>
+        <button class="btn-1" data-toggle="modal" data-target="#biologo">Saiba mais</button>
       </div>
     </div>
 
@@ -192,15 +186,18 @@
 <!-- /ECOBOX -->
 </div>
 
-<!-- Modal -->
+<!-- Modal Promoção -->
 <div class="modal fade" id="saibaMais" data-backdrop="static" data-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content d-flex">
 
-      <div class="modal-header ">
+      <div class="modal-header">
         <div class="row">
-          <h5 class="modal-title text-uppercase" id="staticBackdropLabel">{{nomeProduto}}</h5>
+          <div class="col-md-12 d-flex justify-content-center">
+            <h5 class="modal-title text-uppercase titulo" id="staticBackdropLabel">Produto</h5>
+          </div>
+          
         </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -208,17 +205,23 @@
       </div>
 
       <div class="modal-body">
+        
         <div class="row d-flex align-items-center">
-          <div class="col-md-4">
-            <img [src]="fotoProduto" class="imagemModalProduto">
+          <div class="col-md-6 text-center">
+            <img [src]="fotoProduto" class="imagemModalProduto img-modal">
           </div>
-          <div class="col-md-8">
-            <span class="center-block"></span>
+          <div class="col-md-6">
+            <div class="row"><h3><strong>{{nomeProduto}}</strong></h3></div>
+            <div class="row"><small>{{categoriaProduto}}</small></div>
+            <hr>
+            <div class="row"><h3><strong>Descrição:</strong></h3></div>
+            <div class="row"><span class="center-block d-flex text-justify mr-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quas officia molestiae temporibus odio ipsa labore, dignissimos quod perspiciatis quaerat, voluptatem eaque quisquam. Consequatur expedita eius et eveniet debitis explicabo laudantium temporibus. At commodi mollitia odit rerum error earum illo accusamus dignissimos voluptate voluptatum ullam aperiam sint, quos adipisci, nostrum, cupiditate magnam voluptates. Officia explicabo veniam voluptates adipisci consequatur quo consectetur molestiae! Sunt saepe eum quis id similique, ipsum voluptatibus beatae quaerat ex sapiente impedit eveniet quos ipsa quisquam ea!</span></div>
+            
           </div>
         </div>
-        <div class="row mt-12">
+        <div class="row">
             <div class="col-md-12 text-success d-flex justify-content-end">
-              Preço: RS{{precoProduto}} 
+              <h5><strong style="color: grey;">Preço</strong></h5> <h5><strong style="color: green;">: RS{{precoProduto}}</strong></h5> 
             </div>
         </div>
       </div>    
@@ -230,3 +233,162 @@
     </div>
   </div>
 </div>
+<!-- /Fim do Modal Promoção -->
+
+<!-- Modal ECOBOX -->
+<!-- ECOBOX DE PATRULHEIRO -->
+<div class="modal fade" id="patrulheiro" data-backdrop="static" data-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+  <div class="modal-content d-flex">
+
+    <div class="modal-header">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+          <h5 class="modal-title text-uppercase titulo" id="staticBackdropLabel">ECOBOX</h5>
+        </div>
+        
+      </div>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      
+      <div class="row d-flex align-items-center">
+        <div class="col-md-6 text-center">
+          <img src='../../assets/img/cards/Journey.gif' class="imagemModalProduto img-modal">
+        </div>
+        <div class="col-md-6">
+          <div class="row"><h3><strong>ECOBOX DO PATRULHEIRO</strong></h3></div>
+          <div class="row"><small>ECOBOX</small></div>
+          <hr>
+          <div class="row"><h3><strong>Descrição:</strong></h3></div>
+          <div class="row"><span class="center-block d-flex text-justify mr-3">Esse é o nosso serviço por assinatura para você que deseja experimentar alguns produtos de natureza ecologica, esse nivel de ecobox é para você que gostaria de investir e sair um pouco do comum, das suas comprar comuns e diminuir um pouco sua pegada ecologia em nossa casa a Mãe Terra, com essa caixa você recebe o nosso nivel de patrulheiro ECO, nada melhor do que os amigos da natureza para representar seu inicio nessa jornada ecologica.</span></div>
+          
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 text-success d-flex justify-content-end">
+            <h5><strong style="color: grey;">Preço</strong></h5> <h5><strong style="color: green;">: RS 49.90</strong></h5> 
+          </div>
+      </div>
+    </div>    
+    <div class="modal-footer d-flex justify-content-between">
+      <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Voltar</button>
+      <button type="button" class="btn btn-outline-success" data-dismiss="modal" [routerLink]="['/sacola-comprar', idProduto]">Comprar</button>
+    </div>
+
+  </div>
+</div>
+</div>
+<!-- /ECOBOX DO PATRULHEIRO  -->
+
+<!-- ECOBOX DO EXPLORADOR  -->
+<div class="modal fade" id="explorador" data-backdrop="static" data-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+  <div class="modal-content d-flex">
+
+    <div class="modal-header">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+          <h5 class="modal-title text-uppercase titulo" id="staticBackdropLabel">Produto</h5>
+        </div>
+        
+      </div>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      
+      <div class="row d-flex align-items-center">
+        <div class="col-md-6 text-center">
+          <img src="../../assets/img/cards/Around the world.gif" class="imagemModalProduto img-modal">
+        </div>
+        <div class="col-md-6">
+          <div class="row"><h3><strong>ECOBOX DO EXPLORADOR</strong></h3></div>
+          <div class="row"><small>ECOBOX</small></div>
+          <hr>
+          <div class="row"><h3><strong>Descrição:</strong></h3></div>
+          <div class="row"><span class="center-block d-flex text-justify mr-3">Esse é o nosso serviço por assinatura para você que deseja experimentar alguns produtos de natureza ecologica, Esse nível ja é para você que ja é um explorador na area dos produtos ecologicos e/ou sustentáveis e já se arrisca sem medo de ser feliz em produtos na sua vida, você ja é um explorador que busca sempre conhecer novos itens, novas maneiras de ajudar nossa casinha querida mãe Terra, assim você recebe o título de explorador ECO para o desbravamento que você terá com o uso dos nossos produtos</span></div>
+          
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 text-success d-flex justify-content-end">
+            <h5><strong style="color: grey;">Preço</strong></h5> <h5><strong style="color: green;">: RS 89,90</strong></h5> 
+          </div>
+      </div>
+    </div>    
+    <div class="modal-footer d-flex justify-content-between">
+      <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Voltar</button>
+      <button type="button" class="btn btn-outline-success" data-dismiss="modal" [routerLink]="['/sacola-comprar', idProduto]">Comprar</button>
+    </div>
+
+  </div>
+</div>
+</div>
+<!-- /ECOBOX DO EXPLORADOR -->
+
+<!-- ECOBOX DO BIOLOGO -->
+<div class="modal fade" id="biologo" data-backdrop="static" data-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+  <div class="modal-content d-flex">
+
+    <div class="modal-header">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+          <h5 class="modal-title text-uppercase titulo" id="staticBackdropLabel">Produto</h5>
+        </div>
+        
+      </div>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      
+      <div class="row d-flex align-items-center">
+        <div class="col-md-6 text-center">
+          <img src="../../assets/img/cards/Science.gif" class="imagemModalProduto img-modal">
+        </div>
+        <div class="col-md-6">
+          <div class="row"><h3><strong>ECOBOX DO BIÓLOGO</strong></h3></div>
+          <div class="row"><small>ECOBOX</small></div>
+          <hr>
+          <div class="row"><h3><strong>Descrição:</strong></h3></div>
+          <div class="row"><span class="center-block d-flex text-justify mr-5">Esse é o nosso serviço por assinatura para você que deseja experimentar alguns produtos de natureza ecologica, Esse é o nosso nível master blaster do amigo da natureza aqui é para você que já tem total consciencia dos efeitos que podemos evitar no nosso planeta e realmente ama fazer sua parte e compartilhar essas ideias pelo mundo como um verdadeiro biólogo que ama o que faz e é consciente, aqui você ja é um Biologo que não só explora mas pesquisa novos produtos para adicionar em sua vida.</span></div>
+          
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 text-success d-flex justify-content-end mt-3">
+            <h5><strong style="color: grey;">Preço</strong></h5> <h5 class="pr-4"><strong style="color: green;">: RS119.90</strong></h5> 
+          </div>
+      </div>
+    </div>    
+    <div class="modal-footer d-flex justify-content-between">
+      <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Voltar</button>
+      <p>
+        <button class="btn btn-outline-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Comprar</button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+<!-- /ECOBOX DO BIOLOGO -->
+
+<!-- /Fim do Modal ECOBOX -->
+

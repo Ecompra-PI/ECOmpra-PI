@@ -9,7 +9,7 @@
 
 <div class="container cor col-md-6 mt-4  justify-content-center">
 
-  <div>
+  <div *ngIf="authService.logado() == false">
     <h1 class="text-center">Cadastre-se</h1>
     <p class="text-center">Preencha o formulário abaixo</p>
   </div>
@@ -54,7 +54,7 @@
       </div>
 
       <div class="d-flex justify-content-between">
-        <button type="submit" class="btn btn-outline-danger" id="botaoCancelar">Limpar</button>
+        <button *ngIf="authService.logado() == false" type="submit" class="btn btn-outline-danger" id="botaoCancelar" (click) = "voltar()">Voltar</button>
         <button type="submit" class="btn btn-outline-success" onkeydown="" id="botaoEntrar"
           (click)='cadastrar()'>Cadastrar</button>
       </div>
