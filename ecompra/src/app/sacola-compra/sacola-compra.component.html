@@ -14,7 +14,7 @@
 
 
 
-<div class="container mt-5">
+<div *ngIf="codigo != 0" class="container mt-5">
     <div class="row d-flex justify-content-center align-items-center pb-4 shadow-lg p-3 mb-5 bg-white rounded">
 
         <div class="col-md-12">
@@ -80,6 +80,18 @@
     </div>
 </div>
 
+
+<div *ngIf="codigo == 0" class="container mt-5">
+    <div class="row d-flex justify-content-center align-items-center pb-4 shadow-lg p-3 mb-5 bg-white rounded">
+
+        <div class="col-md-12 d-flex justify-content-center">
+            <h1>Sua sacola está vazia 😭</h1>
+        </div>
+
+    </div>
+</div>
+
+
 <!-- Modal -->
 <div class="modal fade" id="pagamento" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="pagamento" aria-hidden="true">
@@ -118,7 +130,7 @@
                     </div>
                 </div>
 
-                <form *ngIf = "validaPagamento == 'cartao'" class="checkout">
+                <form *ngIf="validaPagamento == 'cartao'" class="checkout">
                     <p>
                         <input type="text" class="p-2 m-2" placeholder="Seu nome">
                         <input type="text" class="p-2 m-2" placeholder="Mês/vencimento">
@@ -128,13 +140,14 @@
                         <input type="text" class="p-2 m-2" placeholder="4111 1111 1111 1111">
                         <input type="text" class="p-2 m-2" alt="Código de segurança" placeholder="CVC">
                     </p>
-                   
+
                 </form>
 
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" (click) = "finalizarVenda()" data-dismiss="modal">Finalizar compra</button>
+                <button type="button" class="btn btn-success" (click)="finalizarVenda()" data-dismiss="modal">Finalizar
+                    compra</button>
             </div>
 
         </div>

@@ -42,7 +42,7 @@ export class SacolaCompraComponent implements OnInit {
     this.getProdutoById(this.codigo)
 
   }
-
+  
   getProdutoById(id: number){
     this.produtoService.getProdutoById(id).subscribe((resp: Produto) => {
       this.produto = resp
