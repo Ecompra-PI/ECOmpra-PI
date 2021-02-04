@@ -18,6 +18,7 @@ export class ContatoComponent implements OnInit {
 
   enviar(){
     this.alertas.showAlertSuccess('Mensagem enviada com sucesso!')
+    
   }
 
 }
