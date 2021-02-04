@@ -1,6 +1,9 @@
 import { ProdutoService } from 'src/app/service/produto.service';
 import { Produto } from 'src/app/model/Produto';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertsService } from '../service/alerts.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-home',
@@ -21,8 +24,11 @@ export class HomeComponent implements OnInit {
   categoriaProduto: string
   fotoProduto: string 
 
+  validaCompra: string
+
   constructor(
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private alertas: AlertsService
   ) { }
 
   ngOnInit(){
@@ -49,6 +55,30 @@ export class HomeComponent implements OnInit {
       this.fotoProduto = this.produto.foto
 
     })
+  }
+
+  validarPagamento(pagamento: string){
+    console.log(pagamento)
+  }
+
+  finalizarVenda(){
+
+    if(this.validaCompra == "cartao"){
+      this.alertas.showAlertInfo("Dados enviados para processamento! Em breve você reberá um email ;)")
+    }else if(this.validaCompra == "boleto"){
+      this.alertas.showAlertInfo("Em breve você reberá o boleto no seu um email!")
+    }else{
+      this.alertas.showAlertDanger("Selecione uma opção de pagamento!")
+    }
+
+  }
+
+  compraRealizada(){
+    this.alertas.showAlertSuccess("Transação processada! Em breve você reberá em seu email informações para finalizar a compra.")
+  }
+
+  assinaturaRealizada(){
+    this.alertas.showAlertSuccess("Assinatura realizada com sucesso! Cadastre o endereço de entrega em seu perfil!")
   }
 
 }

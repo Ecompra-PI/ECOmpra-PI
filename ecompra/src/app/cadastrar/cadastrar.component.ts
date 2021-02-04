@@ -93,4 +93,9 @@ export class CadastrarComponent implements OnInit {
       })
     }
   }
+
+  voltar(){
+    environment.paginaAtual = ''
+    this.router.navigate(["/home"])
+  }
 }
