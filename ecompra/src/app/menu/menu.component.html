@@ -9,43 +9,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="forms">
-     
-      <form class="d-flex w-100" id="pesquisar">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success ml-1" type="submit">Pesquisar</button>
-      </form>
-
-      <div class="col-md-3 d-flex justify-content-end pr-3 align-items-center">
-
-
-        <!-- entrar e sacola de compras -->
-
-        <div>
-          <button class="btn btn-outline-success" routerLink='/entrar'
-            *ngIf='authService.logado() == false'>Entrar</button>
-
-          <div *ngIf='authService.logado() == true' class="d-flex justify-content-end">
-            
-            <div class="row d-flex align-items-center">
-              <div class="col pt-3 d-flex align-items-center">
-                <p> Bem vinde, {{nomeUsuario}}.</p>
-                <img class="bag" src="../../assets/img/menu/sacola.png" alt="">
-                <a (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
-              </div>
-            </div>                                          
-
-          </div>
-        </div>
-        <!-- fim de entrar e sacola de compras -->
-      </div>
-    </div>
-
-
-  </div>
-
-</nav>
-
-<!-- Menu de navegação -->
+      <!-- Menu de navegação -->
 
 <div class="nav bg-light container-fluid">
   <div class="col-md-12 d-flex justify-content-center">
@@ -92,4 +56,39 @@
     </div>
   </div>
 </div>
-<!-- fim Menu de navegação -->
+     
+       <!-- <form class="d-flex w-100" id="pesquisar">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success ml-1" type="submit">Pesquisar</button>
+      </form>  -->
+
+      <div class="col-md-3 d-flex justify-content-end pr-3 align-items-center">
+
+
+        <!-- entrar e sacola de compras -->
+
+        <div>
+          <button class="btn btn-outline-success" routerLink='/entrar'
+            *ngIf='authService.logado() == false'>Entrar</button>
+
+          <div *ngIf='authService.logado() == true' class="d-flex justify-content-end">
+            
+            <div class="row d-flex align-items-center">
+              <div class="col pt-3 d-flex align-items-center">
+                <p> Bem vinde, {{nomeUsuario}}.</p>
+                <img class="bag" src="../../assets/img/menu/sacola.png" alt="">
+                <a (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+              </div>
+            </div>                                          
+
+          </div>
+        </div>
+        <!-- fim de entrar e sacola de compras -->
+      </div>
+    </div>
+
+
+  </div>
+
+</nav>
+
