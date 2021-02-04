@@ -21,7 +21,6 @@ export class SacolaCompraComponent implements OnInit {
   produto: Produto = new Produto()
   validaPagamento: string
 
-
   constructor(
     private router: Router,
     private route: ActivatedRoute,
