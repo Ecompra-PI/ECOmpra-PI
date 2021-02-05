@@ -117,7 +117,7 @@ export class AdminComponent implements OnInit {
 
   cadastrar() {
     if (this.nomeCat == null || this.descricaoCat == null || this.setorCat == null || this.nomeCat == '' || this.descricaoCat == '' || this.setorCat == '') {
-      alert('Preencha todos os campos para cadastrar um produto!')
+      this.alerta.showAlertDanger('Preencha todos os campos para cadastrar um produto!')
     } else {
       this.categoria.nome = this.nomeCat
       this.categoria.descricao = this.descricaoCat
@@ -145,7 +145,7 @@ export class AdminComponent implements OnInit {
 
   cadastrarProduto() {
     if (this.idCat == null || this.nomeProd == null || this.descricaoProd == null || this.precoProd == null || this.quantidadeProd == null || this.promocaoProd == null || this.fotoProd == null) {
-      alert('Preencha todos os campos para cadastrar um produto!')
+      this.alerta.showAlertDanger('Preencha todos os campos para cadastrar um produto!')
     } else {
       this.categoriaProduto.codigo = this.idCat
 
@@ -154,7 +154,7 @@ export class AdminComponent implements OnInit {
 
       this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
         this.produto = resp
-        alert("Produto cadastrado com sucesso!")
+        this.alerta.showAlertSuccess("Produto cadastrado com sucesso!")
         this.findAllProdutos()
         this.produto = new Produto()
 
