@@ -76,7 +76,7 @@
                 </div>
                 <div class="card-info">
                   <h3>{{i.nome}}</h3>
-                  <p>{{i.descricao}}</p>
+                  <p>{{i.categoria.nome}}</p>
                   <button class="btn-1" data-toggle="modal" data-target="#saibaMais"
                     (click)="getProdutoById(i.codigo)">Saiba Mais</button>
                 </div>
@@ -157,7 +157,6 @@
         </div>
         <div class="card-info">
           <h2>Ecobox do Patrulheiro</h2>
-          <p>Descrição</p>
           <button class="btn-1" data-toggle="modal" data-target="#patrulheiro">Saiba mais</button>
         </div>
       </div>
@@ -168,8 +167,6 @@
         </div>
         <div class="card-info">
           <h2>Ecobox do Explorador</h2>
-
-          <p>Descrição</p>
           <button class="btn-1" data-toggle="modal" data-target="#explorador">Saiba mais</button>
         </div>
       </div>
@@ -180,7 +177,6 @@
         </div>
         <div class="card-info">
           <h2>Ecobox do Biólogo</h2>
-          <p>Descrição</p>
           <button class="btn-1" data-toggle="modal" data-target="#biologo">Saiba mais</button>
         </div>
       </div>
