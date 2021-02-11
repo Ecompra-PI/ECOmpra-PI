@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +10,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  imglog = environment.imglogo
+  cadastro: boolean
+  nomeUsuario: string
 
-  ngOnInit(): void {
+
+  constructor( 
+    public authService: AuthService,
+    private router: Router
+   ) { }
+
+  ngOnInit() {
+
+  this.nomeUsuario = environment.nome 
+
+  }
+
+  administrador(){
+    let aparecer: boolean = false
+
+    if(environment.tipoUsuario == 'administrador'){
+      aparecer = true
+    }
+    return aparecer
+  }
+
+  sair(){
+    console.log(environment.codigo)
+    console.log(environment.nome)
+    console.log(environment.token)
+    console.log(environment.tipoUsuario)
+    
+      environment.codigo = 0
+      environment.nome = ''
+      environment.token = ''
+      environment.tipoUsuario = ''
+      this.router.navigate(['/home'])
   }
 
 }

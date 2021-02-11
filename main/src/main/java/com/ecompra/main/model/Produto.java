@@ -31,10 +31,12 @@ public class Produto {
 	private String descricao;
 	
 	@NotNull
-	private int quantidade; 
+	private int quantidade;
 	
 	@NotNull
 	private boolean promocao;
+	
+	private String foto;
 	
 	//Relacionamento entre tabelas
 	@ManyToOne
@@ -97,4 +99,14 @@ public class Produto {
 		this.categoria = categoria;
 	}
 
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	
+	
+	
 }
